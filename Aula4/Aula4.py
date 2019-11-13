@@ -1,3 +1,5 @@
+#Verifica a idade e imprimi
+
 idade = 25
 
 if idade < 18:
@@ -9,6 +11,7 @@ elif idade == 18:
 else:
     print ('SilascoMaisAinda')
 
+#Exemplo de If e else:
 
 ativo = True
 
