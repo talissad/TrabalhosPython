@@ -3,7 +3,6 @@
 #--- Calcule a taboada do número informado
 #--- Imprima a taboada com a conta completa (n * i = r)
 
-
 numero = int(input('Digite um número: '))
 
 for i in range (0,11):
