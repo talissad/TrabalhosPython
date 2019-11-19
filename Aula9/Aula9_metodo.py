@@ -1,27 +1,20 @@
 def soma(n1,n2):
-    res_soma = n1 + n2
-    return res_soma
+    return n1 + n2
 
 def subt(n1,n2):
-    res_subt = n1 - n2
-    return res_subt
+    return n1 - n2
     
 def multi(n1,n2):
-    res_multi = n1 * n2
-    return res_multi
+    return n1 * n2
 
 def divFracionada(n1,n2):
-    res_divFracionada = n1 / n2
-    return res_divFracionada
+    return n1 / n2
 
 def divInteira(n1,n2):
-    res_divInteira = n1 // n2
-    return res_divInteira
+    return n1 // n2
 
 def resto(n1,n2):
-    res_resto = n1 % n2
-    return res_resto
+    return n1 % n2
 
 def raiz(n1,n2):
-    res_raiz = n1 * (1/n2)
-    return res_raizs
+    return n1 * (1/n2)

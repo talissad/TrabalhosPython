@@ -1,10 +1,4 @@
-from Aula9_metodo import soma
-from Aula9_metodo import subt
-from Aula9_metodo import multi
-from Aula9_metodo import divInteira
-from Aula9_metodo import divFracionada
-from Aula9_metodo import resto
-from Aula9_metodo import raiz
+from Aula9_metodo import soma, subt, multi, divInteira, divFracionada, resto, raiz
 
 n1 = int(input('Digite um número: '))
 n2 = int(input('Digite outro número: '))
