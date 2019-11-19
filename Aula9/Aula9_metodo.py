@@ -24,5 +24,4 @@ def resto(n1,n2):
 
 def raiz(n1,n2):
     res_raiz = n1 * (1/n2)
-    return res_raiz
-
+    return res_raizs
