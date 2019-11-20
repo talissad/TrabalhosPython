@@ -1,16 +1,16 @@
 def soma(n1,n2):
     return n1 + n2
 
-def subt(n1,n2):
+def subtracao(n1,n2):
     return n1 - n2
     
-def multi(n1,n2):
+def multiplicacao(n1,n2):
     return n1 * n2
 
-def divFracionada(n1,n2):
+def divisao_fracionada(n1,n2):
     return n1 / n2
 
-def divInteira(n1,n2):
+def divisao_inteira(n1,n2):
     return n1 // n2
 
 def resto(n1,n2):
