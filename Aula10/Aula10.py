@@ -12,7 +12,7 @@ def home():
 
 @app.route('/calcular')
 def calcular():
-    n1 = int(request.args['numero1'])
+    n1 = int(request.args['numero1'])+
     n2 = int(request.args['numero2'])
 
 
