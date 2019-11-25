@@ -8,10 +8,9 @@ valorMinimo = 104.1
 cotas = compras // valorMinimo
 valorInvestimento = cotas * valorMinimo
 
-
 taxa = 0.02 + taxa
 
 
-print('Em março de 2025 você terá R$', tesouroDireto(valorInvestimento, taxa, periodo))
+print('Você terá R$', tesouroDireto(valorInvestimento, taxa, periodo))
 
 print('\n')
