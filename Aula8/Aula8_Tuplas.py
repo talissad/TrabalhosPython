@@ -1,4 +1,3 @@
-Learn more or give us feedback
 # Aula 8 - 18-11-2019
 # Tuplas
 
@@ -16,4 +15,19 @@ usuario['passwd'] = 456123
 lista_pessoas = []
 lista_pessoas.append(pessoa)
 #pessoa[4][1] = 6
-print(pessoa[4][1]) 
+#print(pessoa[4][1]) 
+
+
+
+idade = 16
+lista = ['teti', idade, 'guarana']
+tupla = (1, lista)
+
+print(idade)
+print(lista)
+print(tupla)
+
+idade = 18
+print(idade)
+print(lista)
+print(tupla)
