@@ -20,10 +20,13 @@ lista = [ ['mamão','abacaxi','laranja','uva','pera','maçã','vergamota'],
           ['carro','moto','vespa','caminhão','sprinter','kombi','fusca'],
           ['calça','camisa','japona','jaqueta','camiseta','bone','regata']]
 
-cont = 0
+def lista_item():
+    cont = 0
+    for i in lista:
+        print('############# posição ' ,cont, ' ################## ')
+        cont = cont + 1
+        for j in i:
+            print(j)
 
-for i in lista:
-    print('############# posição ' ,cont, ' ################## ')
-    cont = cont + 1
-    for j in i:
-        print(j)
+lista2 = lista_item()
+print(lista2)
