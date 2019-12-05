@@ -30,3 +30,4 @@ def lista_item():
 
 lista2 = lista_item()
 print(lista2)
+
