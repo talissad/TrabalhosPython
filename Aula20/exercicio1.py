@@ -14,15 +14,13 @@ lista = [['codigo','produto','valor','quantidade'],
 # Execute esta função dentro do while e quando digitar qualquer código que 
 # não tenha produto cadastrado o programa se encerra.
 
-lista_produtos = {}
-
 for i in lista:
+    lista_produtos = []
     for j in i:
         dicionario_produtos = {'codigo':lista[0], 'produto':lista[1], 'valor':lista[2], 'quantidade':lista[3]}
-        dicionario_produtos.append(lista_produtos)
-    # arquivo.close()
-    # return lista
+        lista_produtos.append(dicionario_produtos)
 
-
-k = i
-print(k)
+cod_consultar = int(input('Digite o código do produto: '))    
+    
+    
+    
