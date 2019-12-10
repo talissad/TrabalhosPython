@@ -21,7 +21,7 @@
 
 
 def ler_cadastro():
-   arquivo = open('Aula18/exercicios/cadastro.txt','r')
+   arquivo = open('Aula18/cadastro.txt','r')
    lista = []
    for pessoas in arquivo:
       pessoas = pessoas.strip().split(';')
@@ -46,7 +46,7 @@ def lista_festa(lista_de_entradas):
    salvar(lista_mulheres,"mulheres")
 
 def salvar(lista,nome):
-   arquivo = open(f'Aula18/exercicios/{nome}.txt','a')
+   arquivo = open(f'Aula18/{nome}.txt','a')
    for pessoa in lista:
       texto = f"{pessoa['codigo']};{pessoa['nome']};{pessoa['sexo']};{pessoa['idade']}\n"
       arquivo.write(texto)
@@ -71,10 +71,6 @@ lista_festa(lista1)
 while True:
    a=int(input('Digite um numero: '))
    consulta(lista1,a)
-
-
-
-
 
 
 

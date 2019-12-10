@@ -1,12 +1,13 @@
 # Aula 19 - 04-12-2019
 # Lista com for e metodos
 from random import randint
-arquivo = open('19-Aula19/exercicios/nomes.txt','r')
+arquivo = open('Aula19/nomes.txt','r')
 nomes1 = []
+
 for i in arquivo:
     i = i.strip()
     nomes1.append(i)
-arquivo.close()
+    arquivo.close()
 
 nomes = []
 for i in range(500):
@@ -30,11 +31,11 @@ for i in nomes:
         sexo.append('m')
 
 email = []
-arquivo = open('19-Aula19/exercicios/emails.txt','r')
+arquivo = open('Aula19/emails.txt','r')
 for i in arquivo:
     i = i.strip()
     email.append(i)
-arquivo.close()
+    arquivo.close()
 
 email_sort = []
 
