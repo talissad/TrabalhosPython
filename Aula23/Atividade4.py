@@ -3,8 +3,6 @@
 # O cliente deve ter R$ 100.00 de dinheiro como saldo no cartão.
 # 2) Crie metodos para: adicionar saldo no cartão, descontar saldo do cartão e verificar saldo do cartão.
 
-
-
 # 3) para descontar o saldo do cartão, deve-se entra com a quantidade de ml e o valor por ml da bebida.
 # O metodo deve imprimir na tela a quantidade de bebida e o valor descontado. Caso o saldo do cliente não
 # seja o suficiente, deve-se imprimir o valor descontado e o volume liberado de bebida.
@@ -20,7 +18,7 @@ class Cliente:
         self.idade = idade
         self.telefone = telefone
 
-        self.saldo_inicial = 10
+        self.saldo_inicial = 100
 
     def adicionar_saldo(self, valor):
         self.saldo_inicial += valor
@@ -35,7 +33,6 @@ class Cliente:
         else:
             self.saldo_inicial -= custo
             print(f"Valor descontado: {custo}. Foram liberados {ml} ml.")
-
 
     def verificar_saldo(self):
         pass

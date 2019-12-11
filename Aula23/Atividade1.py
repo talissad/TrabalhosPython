@@ -14,6 +14,51 @@
 # convertendo os valores de string para inteiros quando necessários. 
 # (Faça da forma que vocês conseguirem! O importante é o resultado e não como chegaram nele!)
 
+dadobruto = '1;Arnaldo;23;m;alexcabeludo2@hotmail.com;014908648117'
+
 class Cliente:
-    def __init__(self, dado_bruto):
-        self.dado_bruto = []
+    def __init__(self, dadobruto):
+        self.dado_bruto = dadobruto
+
+        self.codigo = None
+        self.nome = None
+        self.idade = None
+        self.sexo = None
+        self.email = None
+        self.telefone = None
+
+    def cliente(self):
+        a = self.dado_bruto.strip().split(';')
+        self.codigo = int(a[0])
+        self.nome = (a[1])
+        self.idade = int(a[2])
+        self.sexo = (a[3])
+        self.email = (a[4])
+        self.telefone = (a[5])
+  
+# OUTRA FORMA DE PRINT
+#     def __str__(self):
+
+#      texto = f'''
+
+# Codigo: {self.codigo }
+# Nome: {self.nome}
+# Idade: {self.idade}
+# Sexo: {self.sexo}
+# Email:{self.email}
+# Telefone: {self.telefone}'''
+#         return texto
+
+#FORMA DE VERIFICAR CODIGO DO CLIENTE
+# def __eq__(self, valor):
+#     return self.codigo == valor
+
+# while True:
+#     var = int(input('Digite o codigo do cliente: '))
+#     print(a[0] == var)
+
+
+
+c = Cliente(dadobruto)     
+c.cliente()
+print(f'Codigo: {c.codigo}, Nome: {c.nome}, Idade: {c.idade}, Sexo: {c.sexo}, Email: {c.email}, Telefone: {c.telefone}')
