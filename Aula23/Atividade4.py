@@ -13,29 +13,33 @@
 # Cerveja ale  R$ 0.063 /ml 
 
 class Cliente:
-    def __init__(self, nome, idade, telefone):
-        self.nome = nome
-        self.idade = idade
-        self.telefone = telefone
+    def __init__(self, nome, idade, telefone):
+        self.nome = nome
+        self.idade = idade
+        self.telefone = telefone
 
-        self.saldo_inicial = 100
+        self.saldo_inicial = 100
 
-    def adicionar_saldo(self, valor):
-        self.saldo_inicial += valor
+    def adicionar_saldo(self, valor):
+        self.saldo_inicial += valor
+        
+        
+    def descontar_saldo(self, ml, preco):
+        custo = ml * preco
+        if idade >= 18:
+            if custo > self.saldo_inicial:
+                liberado = self.saldo_inicial / preco
+                print(f"Valor descontado: {self.saldo_inicial}. Foram liberados {liberado:.2f} ml.")
+                self.saldo_inicial = 0
+                
+            else:
+                self.saldo_inicial -= custo
+                print(f"Valor descontado: {custo}. Foram liberados {ml} ml.")
+        else:
+            print('Proibida a venda de bebidas alcoolicas para menores de idade!')
 
-    def descontar_saldo(self, ml, preco):
-        #self.saldo_inicial -= desconto
-        custo = ml * preco
-        if custo > self.saldo_inicial:
-            liberado = self.saldo_inicial / preco
-            print(f"Valor descontado: {self.saldo_inicial}. Foram liberados {liberado:.2f} ml.")
-            self.saldo_inicial = 0
-        else:
-            self.saldo_inicial -= custo
-            print(f"Valor descontado: {custo}. Foram liberados {ml} ml.")
-
-    def verificar_saldo(self):
-        pass
+    def verificar_saldo(self):
+        pass
 
 pessoa = Cliente('Talissa', 22, '82347236')
 

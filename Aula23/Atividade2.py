@@ -13,6 +13,13 @@
 # código cliente (inteiro), nome, idade (inteiro), sexo, email, telefone
 # convertendo os valores de string para inteiros quando necessários. 
 # (Faça da forma que vocês conseguirem! O importante é o resultado e não como chegaram nele!)
+  
+# 5) Crie um metodo salvar que pegue os seguintes dados do cliente e salve em um arquivo. 
+# código cliente (inteiro), nome, idade (inteiro), sexo, email, telefone
+# 6) crie um metodo que possa atualizar os dados do cliente (código cliente (inteiro), 
+# nome, idade (inteiro), sexo, email, telefone). Este metodo deverá alterar tambem o dado bruto para
+# que na hora de salvar o dado num arquivo, o mesmo não estaja desatualizado.
+
 
 dadobruto = '1;Arnaldo;23;m;alexcabeludo2@hotmail.com;014908648117'
 
@@ -35,30 +42,26 @@ class Cliente:
         self.sexo = (a[3])
         self.email = (a[4])
         self.telefone = (a[5])
-  
-# 5) Crie um metodo salvar que pegue os seguintes dados do cliente e salve em um arquivo. 
-# código cliente (inteiro), nome, idade (inteiro), sexo, email, telefone
-# 6) crie um metodo que possa atualizar os dados do cliente (código cliente (inteiro), 
-# nome, idade (inteiro), sexo, email, telefone). Este metodo deverá alterar tambem o dado bruto para
-# que na hora de salvar o dado num arquivo, o mesmo não estaja desatualizado.
 
-
-    def salvar(self):
-        arquivo = open ('Aula23/cadastro2', 'a')
-        dicionario_pessoas = (f'Codigo: {c.codigo}, Nome: {c.nome}, Idade: {c.idade}, Sexo: {c.sexo}, Email: {c.email}, Telefone: {c.telefone}')
+    def salvar(self, nome, atributo='a'):
+        arquivo = open (f'Aula23/{nome}.txt', atributo)
+        texto = f'{self.dado_bruto}\n'
+        arquivo.write(texto)
         arquivo.close()
 
-    def atualizar(self, codigo, nome, idade, sexo, email, telefone):
-        self.codigo = codigo
-        self.nome = nome
-        self.idade = idade
-        self.sexo = sexo
-        self.email = email
-        self.telefone = telefone
+    def atualizar(self, nome, idade, sexo, email, telefone):
+        self.nome = input('Digite o novo nome do cliente')
+        self.idade = int(input('Digite a nova idade do cliente: '))
+        self.sexo = input('Digite o sexo: ')
+        self.email = input('Digite o novo email: ')
+        self.telefone = input('Digite o novo telefone: ')
+        self.dado_bruto = f'{self.codigo};{self.nome};{self.idade};{self.sexo};{self.email};{self.telefone}\n'
+        self.salvar('arquivo_novo', 'w')
 
 
-c = Cliente(dadobruto)     
-c.cliente()
-c.atualizar(2, 'Talissa', 22, 'f', 'attas@fmd', '89732527385')
+pessoa = Cliente(dadobruto)
 
-print(f'Codigo: {c.codigo}, Nome: {c.nome}, Idade: {c.idade}, Sexo: {c.sexo}, Email: {c.email}, Telefone: {c.telefone}')
+pessoa.atualizar()     
+print(f'Codigo: {pessoa.codigo}, Nome: {pessoa.nome}, Idade: {pessoa.idade}, Sexo: {pessoa.sexo}, Email: {pessoa.email}, Telefone: {pessoa.telefone}')
+
+

@@ -27,7 +27,7 @@ class Cliente:
         self.email = None
         self.telefone = None
 
-    def cliente(self):
+    def tratamento(self):
         a = self.dado_bruto.strip().split(';')
         self.codigo = int(a[0])
         self.nome = (a[1])
@@ -36,6 +36,11 @@ class Cliente:
         self.email = (a[4])
         self.telefone = (a[5])
   
+
+pessoa = Cliente(dadobruto)
+pessoa.tratamento()     
+print(f'Codigo: {pessoa.codigo}, Nome: {pessoa.nome}, Idade: {pessoa.idade}, Sexo: {pessoa.sexo}, Email: {pessoa.email}, Telefone: {pessoa.telefone}')
+
 # OUTRA FORMA DE PRINT
 #     def __str__(self):
 
@@ -58,7 +63,3 @@ class Cliente:
 #     print(a[0] == var)
 
 
-
-c = Cliente(dadobruto)     
-c.cliente()
-print(f'Codigo: {c.codigo}, Nome: {c.nome}, Idade: {c.idade}, Sexo: {c.sexo}, Email: {c.email}, Telefone: {c.telefone}')
