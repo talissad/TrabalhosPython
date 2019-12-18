@@ -11,6 +11,20 @@ lista = [['1', 'Arnaldo', '23', 'm', 'alexcabeludo2@hotmail.com', '014908648117'
 # de mulheres e a lista[1] possua todas as listas de homens.
 # 2) Após receber a lista da função, imprima na tela a quantidade de mulheres e de homens que tem nesta lista.
 
-lista
+lista_mulheres = []
+lista_homens = []
 
-for i in lista:
+def sexo_pessoa(lista):
+    for i in lista:
+        if 'm' in i[3]:
+            lista_homens.append(i)
+        elif 'f' in i[3]:
+            lista_mulheres.append(i)
+        else:
+            print('Erro')
+
+descobrir = sexo_pessoa(lista) 
+
+print(lista_homens)
+print(lista_mulheres)
+print(f'Há {len(lista_homens)} homens e {len(lista_mulheres)} mulheres')

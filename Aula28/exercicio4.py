@@ -25,6 +25,17 @@ lista2 = ['nome',   ['Alex'   ,'Paulo'  ,'Pedro'  ,'Mateus' ,'Carlos' ,'João'  
 # 1) Faça um dicionário com a lista1 onde cada elemento esteja junto com o seu respectivo
 # preço. (Dica: Use a indexação e fatiamento para ajudar)
 
+fruta_preco = []
+for i in lista1[1]:
+  fruta_preco.append(i)
+for j in lista1[4]:
+  fruta_preco.append(j)
+  
+for i in fruta_preco:
+  dicionario_frutas = {'fruta':fruta_preco[0], 'preco':fruta_preco[1]}
+
+print(dicionario_frutas)
+
 
 # 2) Com o dicionário, imprima os seguintes valores:
 # 2.1) Preço do feijão

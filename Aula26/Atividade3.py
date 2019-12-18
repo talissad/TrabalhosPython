@@ -12,7 +12,7 @@ from geradorlista import binario
 import copy
 from binhex import *
 
-'''# Exercícios baseados do livro Pense em Python.
+# Exercícios baseados do livro Pense em Python.
 
 # 1) Escreva uma função chamada nested_sum que receba a lista de listas de números
 # inteiros (lista1), retorne uma lista única e print a soma de todos os elementos.
@@ -42,7 +42,7 @@ def nested_sum(lista):
 #     return lista_completa
 
 lista = nested_sum(lista1)
-print(lista)
+# print(lista)
 
 # __________________________________________________________________________
 # 2) Com as seguintes listas, transforme em uma string para poder gravar (futuramente) em um arquivo!
@@ -63,7 +63,8 @@ lista_qualquer.extend(lista_cadastrados1)
 
 string_lista = ';'.join(lista_qualquer)
 
-print(string_lista)
+# print(string_lista)
+
 
 # __________________________________________________________________________
 # 3) Com as seguintes lista, transforme em uma string para poder gravar (futuramente) em um arquivo!
@@ -105,21 +106,23 @@ for i in lista_cadastros:
 
 string_lista_cadastro = ';'.join(lista_cadastro_junto)
 
-print(string_lista_cadastro)
+# print(string_lista_cadastro)
+
 
 # __________________________________________________________________________
 # 4) Crie uma função que solicite 5 nomes e retorne uma lista com todos eles
 
 lista_nomes = [] 
 def adicionar_pessoa(chamada):
-    for i in range(1,6):
+    for i in range(1,1): #Alterar quantidade de nomes
         a = input(f'Digite o {i} nome: ')
         a.split()
         lista_nomes.append(a)
     return lista_nomes
 
 lista = adicionar_pessoa(lista_nomes)
-print(lista_nomes)
+# print(lista_nomes)
+
 
 # __________________________________________________________________________
 # 5) Com a lista "Nomes", feita no exercicio 4 (anterior) faça uma cópia para 'Nomes2' e adicione 
@@ -132,8 +135,10 @@ except:
     print(lista_nomes)
     print(lista_nomes2)
 
-print(lista_nomes)
-print(lista_nomes2)
+# print(lista_nomes)
+# print(lista_nomes2)
+
+
 # __________________________________________________________________________
 # 6) Com a lista 'lista_aninhada' faça uma cópia e nomeie como 'lista_aninhada_2'. Na lista_aninhada
 # adicione ao lado do número 9 o número 10. Na lista_aninhada_2 adicione ao lado do número 8 a frase 
@@ -146,37 +151,51 @@ lista_aninhada2 = copy.deepcopy(lista_aninhada)
 lista_aninhada[3][2][1].insert(1, 10)
 lista_aninhada2[3].insert(3, 'Aqui não pode ter o número 10!')
 
-print(lista_aninhada)
-print(lista_aninhada2)
-'''
+# print(lista_aninhada)
+# print(lista_aninhada2)
 
-# 7) Continuando o exercicio, adicione a lista Nomes (exercicio 4) na lista_aninhada entre os números
-# 2 e o 3. Na lista_aninhada_2 adicione a "Pedro Pedroca" entre os números 4 e 5. 
-# Adicione na lista_aninhada, entre os números 1 e 2, a frase 'um, dois' e na lista_aninhada_2, 
-# entre os números 1 e 2 a frase 'Adiciono qualquer coisa em qualquer lugar nesta lista!'
+# __________________________________________________________________________
+# # # 7) Continuando o exercicio, adicione a lista Nomes (exercicio 4) na lista_aninhada entre os números
+# # 2 e o 3. Na lista_aninhada_2 adicione a "Pedro Pedroca" entre os números 4 e 5. 
+# # Adicione na lista_aninhada, entre os números 1 e 2, a frase 'um, dois' e na lista_aninhada_2, 
+# # entre os números 1 e 2 a frase 'Adiciono qualquer coisa em qualquer lugar nesta lista!'
+# lista_aninhada.insert(2, lista_nomes)
+# lista_aninhada2[3].insert(1, 'Pedro Pedroca')
+# lista_aninhada.insert(1, 'um, dois')
+# lista_aninhada2.insert(1, 'Adiciono qualquer coisa em qualquer lugar nesta lista!')
+
+# print(lista_aninhada)
+# print(lista_aninhada2)
 
 
+# __________________________________________________________________________
 # 8) Com a lista1, ordene os números de maior para menor!
 lista1 = lista_simples_int(100)
 lista1.sort(reverse= True)
-#print(lista1)
+print(lista1, '\n')
 
+
+# __________________________________________________________________________
 # 9) Com a lista2, ordene os números de menor para maior!
 lista2 = lista_simples_int(100)
 lista2.sort()
-#print(lista2)
+print(lista2, '\n')
 
+# __________________________________________________________________________
 # 10) Usando o metodo, adicione a lista1 e lista2 (já ordenadas) na lista0.
 lista0 = []
 
-for i in lista1:
-    lista0.append(i)
+def adicionar():
+    for i in lista1:
+        lista0.append(i)
+    for i in lista2:
+        lista0.append(i)
 
-for i in lista2:
-    lista0.append(i)
+chamar = adicionar()
+print(lista0)
 
-#adicionar = lista1, lista2
 
+# __________________________________________________________________________
 # 11) Ordene a lista0 e diga qual é o maior valor, menor valor e em quais das listas (lista1 ou lista2)
 # estes pertencem.
 lista0.sort()
@@ -185,31 +204,38 @@ print(min(lista0))
 
 if max(lista0) in lista1 and max(lista0) not in lista2:
     print('O número máximo pertence a primeira lista')
-
 elif max(lista0) in lista2 and max(lista0) not in lista1:
     print('O número máximo pertence a segunda lista')
-
 elif max(lista0) in lista2 and max(lista0) in lista1:
     print('O número máximo está nas duas listas')
+else:
+    print('Possui erro no codigo')    
 
-elif min(lista0) in lista1 and min(lista0)  not in lista2:
+
+if min(lista0) in lista1 and min(lista0)  not in lista2:
     print('O número minímo pertence a primeira lista')
-
 elif min(lista0) in lista2 and min(lista0) not in lista1:
     print('O número minímo pertence a segunda lista')
-
 elif min(lista0) in lista2 and min(lista0) in lista1:
     print('O número minímo está nas duas listas')
-
 else:
-    print('Possui erro no codigo')      
+    print('Possui erro no codigo')    
+      
 
+
+# __________________________________________________________________________
 # 12) Com a lista_aninhada e lista_aninhada2, do exercicio 7, remova todas as alterações que nelas foram
 # colocadas. Salve os dados removidos em uma lista e imprima na tela cada item em uma linha
 # usando o f-string (use o .pop() )
 
+ # 7) Continuando o exercicio, adicione a lista Nomes (exercicio 4) na lista_aninhada entre os números
+# 2 e o 3. Na lista_aninhada_2 adicione a "Pedro Pedroca" entre os números 4 e 5. 
+# Adicione na lista_aninhada, entre os números 1 e 2, a frase 'um, dois' e na lista_aninhada_2, 
+# entre os números 1 e 2 a frase 'Adiciono qualquer coisa em qualquer lugar nesta lista!'
 
+####################
 
+# __________________________________________________________________________
 # 13) Remova, usando o .remove(), os seguintes itens destas listas:
 
 lista_cadastro = ['codigo', 'cpf', 'nome_completo', 'data_de_nascimento',
@@ -248,6 +274,7 @@ print(lista_cadastro)
 print(lista_cadastrados)
 print(lista_cadastrados1)
 
+# __________________________________________________________________________
 # 14) Com a lista_fusao mostre com f-strig e o metodo .index() a posição dos seguintes elementos:
 # 14.1) cidade
 # 14.2) João Carlos
@@ -281,6 +308,7 @@ print(f'posição - Cidade: {a}\nposição - João Carlos: {b}\nposição - Camb
         f'posição - numero: {i}\n')
 
 
+# __________________________________________________________________________
 # 15) Usando o metodo .index(), Crie uma função que localize a posição dos seguintes nomes: 
 # Germana, Deoclides, Zacarias, Karyne, Helio, Silvain, Aida Santos
 # Esta função deve receber como parametro a lista_cadastros e o nome. Deve retornar uma lista contendo
@@ -292,7 +320,7 @@ print(f'posição - Cidade: {a}\nposição - João Carlos: {b}\nposição - Camb
 # 'Alenis Dias'
 
 # Dica: Use o tratamento de ecessões para evitar erro ao procurar um indice que não existe!
-
+##############
 lista_cadastros = [['1', 'Arnaldo', '23', 'm', 'alexcabeludo2@hotmail.com', '014908648117'], ['2', 'Haroldo', '44', 'f', 'baratarebelde@gmail.com', '050923172729'], ['3', 'Pilar', '50', 'm', 'wanderson10sp@gmail.com', '018937341049'], ['4', 'Suzete Salvador', '45', 'f', 'eladiomp2@yahoo.com.br', '056928409823'], ['5', 'Riane', '37', 'f', 'orkutzimpower@terra.com.br', '018916004377'], ['6', 'Waldir', '34', 'f', 'nandah.s2@bol.com.br', '058903756441'], ['7', 'Lilian', '22', 'f', 'arydoido@gmail.com', '031958621596'], ['8', 'Matilde', '20', 'm', 'eu_kaka_@hotmail.com', '012941959390'], ['9', 'Samanta', '19', 'm', 'carro.tuning@yahoo.com.br', '028964480437'], ['10', 'Margarida', '30', 'm', 'paraaconta.08@hotmail.com', '047903547580'], ['11', 'Evelyn', '31', 'm', 'joaosilvaticudo@gmail.com', '053958638386'], ['12', 'Alessio', '29', 'm', 'w.nill02@gmail.com', '033961294774'], ['13', 'Yolanda', '25', 'm', 'patty_karen2005@hotmail.com', '027903312626'], ['14', 'Germana', '33', 'f', 'jarlinhatopdelinhagv@hotmail.com', '053964603415'], ['15', 'Helio', '33', 'f', 'juh.slim@gmail.com', '046997316461'], ['16', 'Liége', '21', 'f', 'gledsonlds@hotmail.com', '056992948431'], ['17', 'Yan', '42', 'm', 'lucapratto@yahoo.com.br', '016963562866'], ['18', 'Silvain', '50', 'f', 'hie.s2@hotmail.com', '021963399433'], ['19', 'Brian', '33', 'f', 'juliagabrielle06@hotmail.com', '027962676732'], ['20', 'Deoclides', '40', 'f', 'patriciamascena@gmail.com', '012961047979'], ['21', 'Jaqueline', '32', 'm', 'aninha183@hotmail.com', '014958997782'], ['22', 'Rosamaria', '45', 'f', 'j_leosao@hotmail.com', '026944672627'], ['23', 'Carla', '42', 'm', 'jhasdfjo@hotmail.com', '046976625208'], ['24', 'Aida Santos', '30', 'f', 'nayara.cristinap@hotmail.com', '034920819199'], ['25', 'Thomas', '19', 'm', 'jfdslinda@bol.com.br', '030974027667'], ['26', 'Naiara', '23', 'm', 'darknees_666@ig.com.br', '018976696717'], ['27', 'Karyne', '17', 'm', 'garotosonhador_1@hotmail.com', '054984689319'], ['28', 'Alenis Dias', '43', 'f', 'vi_vi_cristinaf@hotmail.com', '034980886309'], ['29', 'Grace', '38', 'm', 'amandakell@uol.com.br', '041932906720'], ['30', 'Zacarias', '31', 'm', 'loca.som@hotmail.com', '041926007066']]
 a = lista_cadastros.index('Germana')
 b = lista_cadastros.index('Deoclides')
@@ -304,6 +332,7 @@ g = lista_cadastros.index('Aida Santos')
 
 print(a,b,c,d,e,f,g)
 
+# __________________________________________________________________________
 # 16) Conte na lista1 a quantidade dos seguintes valores (use o f-string):
 # 16.1) 4529
 # 16.2) 29
@@ -333,20 +362,27 @@ print(f'4529:{lista1.count(4529)}\n29:{lista1.count(29)}\n1107:{lista1.count(110
 
 ###################### .reverse() ######################
 
+# __________________________________________________________________________
 # 17) Um numero binário, localizado em uma lista 'listabin', necessita ser convertido em número decimal.
 # Faça uma função que converta o número binário e retorne o número em decimal. Imprima na tela
 # o número binário e o resultado. (use o .reverte())
+def hexadecimal(binario):
+    binario.reverse()
+    resultado_convert = []
+    for i in range(len(binario)):
+        resultado = 2 ** i * binario[i]
+        resultado_convert.append(resultado)
+    return sum(resultado_convert)
 
 listabin = binario()
+hexa = hexadecimal(listabin)
+
 print(listabin)
-
-convertendo = 0
-dec = 1
-
-listabin.reverse(hex)
+print(hexa)
 
 
 
+# __________________________________________________________________________
 # 18) com as seguintes listas, imprima elas e .reverte() suas posições. Some as posições e retorne a lista com
 # as somas.
 # Exemplo:
@@ -356,8 +392,13 @@ listabin.reverse(hex)
 
 # 18.1) lista1
 lista1 = lista_simples_int(8)
-print(lista1)
-print(lista1.reverse(), '\n')
+
+def ler_lista(lista1, lista2):
+    lista1.reverse()
+    
+
+copia_lista1 = copy.deepcopy(lista1)
+
 # 18.2) lista2
 lista2 = lista_simples_int(8)
 print(lista2)
@@ -450,6 +491,7 @@ print(lista19.reverse(), '\n')
 
 
 
+# __________________________________________________________________________
 # 19) Com um comando .clear()  apague as seguintes informações:
 # 19.1) apague toda a lista
 lista_aninhada = [1, 2, 3, [4, 5, [1, 2, 3, [4, 5, [7, [9], 8], 6]], 6]]
@@ -474,4 +516,5 @@ lista_aninhada.clear()
 # 19.6) 9,10
 lista_aninhada = [[1,2],[3,4],[5,6],[7,8],[9,10]]
 lista_aninhada.clear()
-'''
+
+print(lista_aninhada)

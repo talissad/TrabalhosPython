@@ -56,10 +56,15 @@ texto = '''1;Arnaldo;23;m;alexcabeludo2@hotmail.com;014908648117
 49;Silvio;45;m;laurim_crazyboy@hotmail.com;033986392040
 50;Vanusa;23;m;aline_gatinha_13@yahoo.com.br;015938655596'''
 
-lista = []
-for pessoa in texto:
-    pessoa = pessoa.strip().split(';')
-    dicionario_pessoa = {'codigo':pessoa[0], 'nome':pessoa[1], 'idade':pessoa[2], 'sexo':pessoa[3], 'email':pessoa[4], 'telefone':pessoa[5]}
-    lista.append(dicionario_pessoa)
+linhas_texto = texto.join(';')
+print(texto)
 
-print(lista)
+# lista = []
+# for linhas in texto:
+#     print(linhas)
+#     for pessoa in texto:
+#         pessoa = pessoa.strip().split(';')
+#         dicionario_pessoa = {'codigo':pessoa[0], 'nome':pessoa[1], 'idade':pessoa[2], 'sexo':pessoa[3], 'email':pessoa[4], 'telefone':pessoa[5]}
+#         lista.append(dicionario_pessoa)
+
+# print(lista)

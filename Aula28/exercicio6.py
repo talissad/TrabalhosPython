@@ -10,6 +10,15 @@
 # seja reiniciado quando todos os alunos forem sorteados.
 # - Faça um menu para o program e de destaque para o aluno sorteado.
 
+from random import randint
+
+alunos = ['Ana', 'Amanda', 'Bia', 'Camila', 'André', 'Maicon', 'Ricardo', 'Talissa']
+aleatorio = randint(alunos, 1)
+
+print(randint.alunos)
+
+
+
 
 
 
