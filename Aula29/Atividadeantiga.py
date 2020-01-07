@@ -21,12 +21,45 @@
 # 4 - Sempre que acontecer um embarque no avião, apresentar quem está no avião
 # 5 - Deve ser feito em Python
 
-lista_motorista = ['piloto', 'chefe', 'policial']
-lista_passageiro = ['pressidiario', 'oficial 1', 'oficial 2', 'comissaria 1', 'comissaria 2']
-
-passageiroTerminal = ['piloto', 'chefe', 'policial', 'pressidiario', 'oficial 1', 'oficial 2', 'comissaria 1', 'comissaria 2']
-passageiroFrotwo = []
-passageiroAvião = []
+passageiros = []
 motoristaAguardo = []
 
-def embarque
+print('-'*100)
+
+def primeiraViagem(motorista, motorista2):
+    motoristaAguardo.append(motorista2)
+    print(f'Fortwo está indo em direção ao terminal com o {motorista} e o {motorista2}')
+    print(f'Fortwo chegou no terminal, desembarca o {motorista2}')
+    print(f'Fortwo está voltando com o {motorista} \n')
+
+def adicionarPassageiro(motorista, passageiro):
+    passageiros.append(passageiro)
+    print(f'Fortwo está indo em direção ao terminal com o {motorista} e o {passageiro}')
+    print(f'Fortwo chegou no terminal, desembarca o {passageiro}')
+    print(f"Pessoas que estão no terminal: {', '.join(passageiros)}")
+    print(f'Fortwo está voltando com o {motorista} \n')
+
+def adicionarPassageiroMotorista(motorista, passageiro):
+    passageiros.append(passageiro)
+    passageiros.append(motorista)
+    print(f'Fortwo está indo em direção ao terminal com o {motorista} e o {passageiro}')
+    print(f'Fortwo chegou no terminal, desembarca o {motorista} e o {passageiro}')
+    print(f"Pessoas que estão no terminal: {', '.join(passageiros)}")
+
+    bool (motoristaAguardo)
+    if motoristaAguardo:
+        print(f"Voltando o {', '.join(motoristaAguardo)}\n")
+        motoristaAguardo.pop()
+    else:
+        print(f'\nTodos os passageiros chegaram no terminal! Pronto para partir\n')
+
+viagem1 = primeiraViagem('chefe', 'piloto')
+viagem2 = adicionarPassageiroMotorista('policial', 'presidiario')
+viagem3 = adicionarPassageiro('piloto', 'oficial')
+viagem4 = adicionarPassageiro('piloto', 'oficial')
+viagem5 = adicionarPassageiro('chefe', 'comissaria')
+viagem6 = adicionarPassageiro('chefe', 'comissaria')
+viagem7 = adicionarPassageiroMotorista('piloto', 'chefe')
+
+print(f"Embarcaram no avião: {', '.join(passageiros)}\n")
+print('-'*100)
