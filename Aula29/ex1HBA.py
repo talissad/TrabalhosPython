@@ -14,45 +14,52 @@
 # processo, a empresa autorizou que o policial pudesse dirigir o veículo também.
 
 # Requisitos:
+
 # 1 - Sempre que o Fortwo se mover, apresentar no console quando ele chega no destino
 # 2 - Sempre que acontecer um embarque, apresentar quais elementos estão embarcando
 # 3 - Sempre que acontecer um embarque no terminal, apresentar quem está no terminal
 # 4 - Sempre que acontecer um embarque no avião, apresentar quem está no avião
 # 5 - Deve ser feito em Python
 
-
-# tripulação técnica - piloto e dois oficiais. 
-# tripulação de cabine - chefe de serviço de voo e duas comissárias.
-# um policial junto com um presidiário
-
-# veículo que leva apenas duas pessoas
-# piloto, chefe de serviço e policial podem dirigir.
-
-# nenhum dos oficiais pode ficar sozinho com o chefe de serviço de bordo
-# nenhuma das comissárias pode ficar sozinha com o piloto
-# presidiário não pode ficar sozinho em momento algum com os tripulantes sem a presença do policia
-
-
 passageiros = []
+motoristaAguardo = []
 
-def levarPessoa(motorista, passageiro):
-    print(f'Está embarcando o {motorista} e o {passageiro}')
-    print(f'Fortwo chegou no destino')
+print('-'*100)
+
+def primeiraViagem(motorista, motorista2):
+    motoristaAguardo.append(motorista2)
+    print(f'Fortwo está indo em direção ao terminal com o {motorista} e o {motorista2}')
+    print(f'Fortwo chegou no terminal, desembarca o {motorista2}')
+    print(f'Fortwo está voltando com o {motorista} \n')
+
+def adicionarPassageiro(motorista, passageiro):
     passageiros.append(passageiro)
-    print(f'Voltando o {motorista}\n')
+    print(f'Fortwo está indo em direção ao terminal com o {motorista} e o {passageiro}')
+    print(f'Fortwo chegou no terminal, desembarca o {passageiro}')
+    print(f"Pessoas que estão no terminal: {', '.join(passageiros)}")
+    print(f'Fortwo está voltando com o {motorista} \n')
 
-def ultimaViagem(motorista, passageiro):
-    print(f'Está embarcando o {motorista} e o {passageiro}')
-    print(f'Fortwo chegou no destino! Todos os passageiros estão no local, pronto para partir\n')
+def adicionarPassageiroMotorista(motorista, passageiro):
     passageiros.append(passageiro)
     passageiros.append(motorista)
+    print(f'Fortwo está indo em direção ao terminal com o {motorista} e o {passageiro}')
+    print(f'Fortwo chegou no terminal, desembarca o {motorista} e o {passageiro}')
+    print(f"Pessoas que estão no terminal: {', '.join(passageiros)}")
 
-primeiraViagem = levarPessoa('piloto', 'oficial')
-segundaViagem = levarPessoa('piloto', 'oficial')
-terceiraViagem = levarPessoa('chefe', 'piloto')
-quartaViagem = levarPessoa('chefe', 'comissaria')
-quintaViagem = levarPessoa('chefe', 'comissaria')
-sextaViagem = levarPessoa('policial', 'chefe')
-setimaViagem = ultimaViagem('policial', 'presidiario')
+    bool (motoristaAguardo)
+    if motoristaAguardo:
+        print(f"Voltando o {', '.join(motoristaAguardo)}\n")
+        motoristaAguardo.pop()
+    else:
+        print(f'\nTodos os passageiros chegaram no terminal! Pronto para partir\n')
 
-print(passageiros)
+viagem1 = primeiraViagem('chefe', 'piloto')
+viagem2 = adicionarPassageiroMotorista('policial', 'presidiario')
+viagem3 = adicionarPassageiro('piloto', 'oficial')
+viagem4 = adicionarPassageiro('piloto', 'oficial')
+viagem5 = adicionarPassageiro('chefe', 'comissaria')
+viagem6 = adicionarPassageiro('chefe', 'comissaria')
+viagem7 = adicionarPassageiroMotorista('piloto', 'chefe')
+
+print(f"Embarcaram no avião: {', '.join(passageiros)}\n")
+print('-'*100)
