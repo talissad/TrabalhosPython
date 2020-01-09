@@ -1,8 +1,7 @@
 # Aula 20 - 05-12-2019
 
 # Com a seguinte tupla:
-
-(('codigo','nome','idade','sexo','email','telefone'),
+lista = (('codigo','nome','idade','sexo','email','telefone'),
  ('1', 'Francini', '32', 'm', 'fjvwys@click21.com.br', '026957242380'),
  ('2', 'Pia', '18', 'f', 'lidiagatinha15@yahoo.com.br', '031937463495'), 
  ('3', 'Vanessa', '40', 'm', 'fenix-ikki@bol.com.br', '038931353619'), 
@@ -27,10 +26,32 @@
 
 #  Crie um programa que tenha o menu interativo para cadastrar clientes,
 #  consultar clientes, e sair.
+print('''
+Menu:
+
+1 - Cadastrar cliente
+2 - Consultar cliente
+3 - Sair
+
+''')
+opcao = input('Digite uma opção: ')
 
 #  Na opção cadastrar cliente, o código cliente não pode ser igual a 
 #  nenhum cliente cadastrado. Devendo seguir a contagem a partir do ultimo
 #  cliente cadastrado.
+
+if opcao == '1':
+    cod = 0
+    n = 0
+    for i in lista:
+        for j in i:
+            if cod == lista[1][n]:
+                n =+1
+                cod =+1
+            else:
+                cod = i
+    print(i)
+
 
 # Na opção consultar clientes, deve-se consultar toda a lista incluindo os
 # novos cadastrados.

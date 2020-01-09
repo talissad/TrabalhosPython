@@ -49,7 +49,7 @@ class Cliente:
         arquivo.write(texto)
         arquivo.close()
 
-    def atualizar(self, nome, idade, sexo, email, telefone):
+    def atualizar():
         self.nome = input('Digite o novo nome do cliente')
         self.idade = int(input('Digite a nova idade do cliente: '))
         self.sexo = input('Digite o sexo: ')
@@ -61,7 +61,8 @@ class Cliente:
 
 pessoa = Cliente(dadobruto)
 
-pessoa.atualizar()     
+atualizar()
+
 print(f'Codigo: {pessoa.codigo}, Nome: {pessoa.nome}, Idade: {pessoa.idade}, Sexo: {pessoa.sexo}, Email: {pessoa.email}, Telefone: {pessoa.telefone}')
 
 

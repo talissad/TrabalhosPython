@@ -12,7 +12,8 @@
 # dica: linha 204 do arquivo execoes.py
 
 try:
-    arquivo = open('Aula21/Explicação_Try_Except_Teste.txt', 'r')
+    arquivo = open('Aula21/Explicação_Try_Except.txt', 'r') #funcionando
+    arquivo = open('Aula21/Explicação_Try_Except_exemploComErro.txt', 'r') #erro
 
 except OSError:
     print('Envidando dados para função tratar_dados() ')

@@ -10,3 +10,8 @@
 # READ          - select
 # UPDATE        - update
 # DELETE        - delete
+
+# INSERT INTO Talissa (nome, idade)
+# VALUES ('Paulo', 21)
+
+# UPDATE Talissa SET idade='23' where id=1
