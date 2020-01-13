@@ -13,10 +13,19 @@ def buscar_por_id(c, id):
     pessoa = c.fetchone()
     print(pessoa)
 
+def buscar_por_sobrenome(c, sobrenome):
+    c.execute(f"SELECT * FROM pessoa where sobrenome like '{sobrenome}%'")
+    for p in c.fetchall():
+        print(p)
+
 # conexao = MySQLdb.connect(host='mysql.topskills.study', database='topskills01', user='topskills01', passwd='ts2019')
 conexao = MySQLdb.connect(host='127.0.0.1', database='aulabd', user='root', passwd='')
 
 cursor=conexao.cursor()
 
 # listar_todos(cursor)
-buscar_por_id(cursor, 3)
+# buscar_por_id(cursor, 3)
+buscar_por_sobrenome(cursor, 'Dahlke')
+
+
+# like % -> busca determinado caracter  
