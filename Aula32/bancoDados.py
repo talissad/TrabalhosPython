@@ -1,4 +1,4 @@
-from flask_mariadb import mysql
+from flask import mysql
 from contextlib import closing
 
 __dados = {'host': "mysql.topskills.study",
@@ -11,13 +11,13 @@ __dados = {'host': "mysql.topskills.study",
 def cadastrar(nome,idade):
     with closing(MySQL.db.connect(**__dados)) as conn:
         cursor = conn.cursor()
-        cursor.execute(f"INSERT INTO topskills01.Bruna (nome,idade) VALUES ('{nome}','{idade};)")
+        cursor.execute(f"INSERT INTO topskills01.Talissa (nome,idade) VALUES ('{nome}','{idade};)")
         conn.commit()
 
 def consultarAll():
     with closing(MySQL.db.connect(**__dados)) as conn:
         cursor = conn.cursor()
-        cursor.execute('SELECT * FROM Bruna')
+        cursor.execute('SELECT * FROM Talissa')
         print('\nSó uma linha: ',cursor.fetchone())
         print('\nVarias linhas: ', cursor.fetchall())
     
