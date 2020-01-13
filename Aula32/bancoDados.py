@@ -1,4 +1,4 @@
-from flask import mysql
+import Mysql
 from contextlib import closing
 
 __dados = {'host': "mysql.topskills.study",
