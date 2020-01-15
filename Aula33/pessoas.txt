@@ -2,3 +2,7 @@
 2; Camila; Rodrigues; 38; 2
 3; Ricardo; Koball; 28; 3
 4; Talissa; Dahlke; 22; 4
+1; Pamela; Souza; 28; 1
+2; Camila; Rodrigues; 38; 2
+3; Ricardo; Koball; 28; 3
+4; Talissa; Dahlke; 22; 4

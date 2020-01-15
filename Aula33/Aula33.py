@@ -1,30 +1,40 @@
 import MySQLdb
 
-#conexao = MySQLdb.connect(host='mysql.topskills.study', database='topskills01', user='topskills01', passwd='ts2019')
-conexao = MySQLdb.connect(host='127.0.0.1', database='aulabd', user='root', passwd='')
-cursor = conexao.cursor()
 
-lista_pessoa = []
+def listar_todos():
+    #conexao = MySQLdb.connect(host='mysql.topskills.study', database='topskills01', user='topskills01', passwd='ts2019')
+    conexao = MySQLdb.connect(host='127.0.0.1', database='aulabd', user='root', passwd='')
+    cursor = conexao.cursor()
 
-comando_sql_select = "SELECT * FROM pessoa"
-cursor.execute(comando_sql_select)
+    comando_sql_select = "SELECT * FROM pessoa"
+    cursor.execute(comando_sql_select)
 
-resultado = cursor.fetchall()
+    resultado = cursor.fetchall()
+    return resultado
 
-for p in resultado:
-    dicionario_pessoa = {'nome': '', 'sobrenome' : '', 'idade': 0, 'endereco_id': 0}
-    dicionario_pessoa['id'] = p[0]
-    dicionario_pessoa['nome'] = p[1]
-    dicionario_pessoa['sobrenome'] = p[2]
-    dicionario_pessoa['idade'] = p[3]
-    dicionario_pessoa['endereco_id'] = p[4]
-    lista_pessoa.append(dicionario_pessoa)
+def converte_tabela_dicionario(lista_tuplas):
+    lista_pessoa = []
+    for p in lista_tuplas:
+        dicionario_pessoa = {'nome': '', 'sobrenome' : '', 'idade': 0, 'endereco_id': 0}
+        dicionario_pessoa['id'] = p[0]
+        dicionario_pessoa['nome'] = p[1]
+        dicionario_pessoa['sobrenome'] = p[2]
+        dicionario_pessoa['idade'] = p[3]
+        dicionario_pessoa['endereco_id'] = p[4]
+        lista_pessoa.append(dicionario_pessoa)
+    return lista_pessoa
 
-with open('Aula33/pessoas.txt', 'a') as arquivo:
-    for p in lista_pessoa:
-        arquivo.write(f"{p['id']}; {p['nome']}; {p['sobrenome']}; {p['idade']}; {p['endereco_id']}\n")
+def exportar_txt(lista_pessoa):
+    with open('Aula33/pessoas.txt', 'a') as arquivo:
+        for p in lista_pessoa:
+            arquivo.write(f"{p['id']}; {p['nome']}; {p['sobrenome']}; {p['idade']}; {p['endereco_id']}\n")
 
-# print(lista_pessoa)
+
+lpt = listar_todos()
+lpd = converte_tabela_dicionario(lpt)
+exportar_txt(lpd)
+
+
 
 
 
