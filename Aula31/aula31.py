@@ -24,9 +24,13 @@ def salvar(cn, cr, nome, sobrenome, idade, endereco_id='NULL'):
     cn.commit()
 
 #alterar pessoa
-def alterar(cn, cr, id, nome, sobrenome, idade, endereco_id='NULL'):
-    cr.execute(f"UPDATE pessoa SET NOME='{nome}', SOBRENOME='{sobrenome}', IDADE={idade}, ENDERECO_ID={endereco_id} WHERE ID={id} ")
-    cn.commit()
+try:
+    def alterar(cn, cr, id, nome, sobrenome, idade, endereco_id='NULL'):
+        cr.execute(f"UPDATE pessoa SET NOME='{nome}', SOBRENOME='{sobrenome}', IDADE={idade}, ENDERECO_ID={endereco_id} WHERE ID={id} ")
+        cn.commit()
+except (MySQLdb.Error, MySQLdb.Warning) as e:
+    if (e.args[0]==1542):
+        print(f'Erro no Foreign Key jovem, Id errado')
 
 #deletar pessoa por ID
 def deletar(cn, cr, id):
