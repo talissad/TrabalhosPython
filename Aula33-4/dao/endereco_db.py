@@ -1,3 +1,5 @@
+import sys
+sys.path.append('/Users/900161/Documents/TrabalhosPython/Aula33-4')
 import MySQLdb
 from model.endereco import Endereco
 
@@ -23,9 +25,11 @@ class EnderecoDb:
         for e in lista_tuplas:
             e1 = Endereco()
             e1.id = e[0]
-            e1.nome = e[1]
-            e1.sobrenome= e[2]
-            e1.idade = e[3]
-            e1.endereco_id = e[4]
+            e1.logradouro = e[1]
+            e1.numero= e[2]
+            e1.complemento = e[3]
+            e1.bairro = e[4]
+            e1.cidade = e[5]
+            e1.cep = e[6]
             lista_endereco.append(e1)
         return lista_endereco

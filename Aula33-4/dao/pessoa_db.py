@@ -1,4 +1,6 @@
 import MySQLdb
+import sys
+sys.path.append('C:/Users/900161/Documents/TrabalhosPython/Aula33-4')
 from model.pessoa import Pessoa
 
 class PessoaDb:
