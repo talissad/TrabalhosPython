@@ -31,3 +31,41 @@ class PessoaDb:
             p1.endereco_id = p[4]
             lista_pessoas.append(p1)
         return lista_pessoas
+
+
+    def salvar(self, pessoa:Pessoa):
+        comando = f""" INSERT INTO pessoa
+        (
+            NOME,
+            SOBRENOME,
+            IDADE,
+            ENDERECO_ID
+        )
+        VALUES
+        (
+            '{pessoa.nome}',
+            '{pessoa.sobrenome}',
+            {pessoa.idade},
+            {pessoa.endereco.id}
+        )"""
+        self.cursor.execute(comando)
+        self.conexao.commit()
+        id_inserido = self.cursor.lastrowid
+        return id_inserido
+
+    def alterar(self, pessoa:Pessoa):
+        comando = f""" UPDATE pessoa
+        SET
+            NOME = '{pessoa.nome}',
+            SOBRENOME ='{pessoa.sobrenome}',
+            IDADE = {pessoa.idade},
+            ENDERECO_ID = {pessoa.endereco.id}
+        WHERE ID = {pessoa.id}
+        """
+        self.cursor.execute(comando)
+        self.conexao.commit()
+
+    def deletar(self, id):
+        comando = f"DELETE FROM pessoa WHERE ID = {id}"
+        self.cursor.execute(comando)
+        self.conexao.commit()
