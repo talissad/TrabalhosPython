@@ -1,7 +1,7 @@
 import sys
-sys.path.append('C:/Users/900161/Documents/TrabalhosPython/Aula33-4')
-from controller.pessoas_controller import PessoaController
-from model.pessoa import Pessoa
+sys.path.append('/Users/900161/Documents/TrabalhosPython/Aula36-copia/')
+from Controller.pessoa_controller import PessoaController
+from Model.pessoa import Pessoa
 
 pessoa = Pessoa()
 pessoa.nome = 'Draeta1'
@@ -15,7 +15,7 @@ pessoa.endereco.cidade = 'gaspar'
 pessoa.endereco.cep = '11111-000'
 
 controller = PessoaController()
-# id_salvo = controller.salvar(pessoa)
-# pessoa_endereco = controller.buscar_por_id(id_salvo)
-# print(pessoa_endereco)
+#id_salvo = controller.salvar(pessoa)
+#pessoa_endereco = controller.buscar_por_id(id_salvo)
+#print(pessoa_endereco)
 print(controller.buscar_por_id(1))
