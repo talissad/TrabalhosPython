@@ -11,14 +11,14 @@ body{
     border-radius: 1em;
 }
 #tabela-pessoa thead tr th{
-    background: #000;
+    background: #fff;
     padding: 0.8em;
     text-align: left;
     
 }
 #tabela-pessoa tbody tr td{
     padding: 0.3em;
-    color:#000;
+    color:#fff;
 }
 .btn-cadastro{
     color:#fff;
@@ -35,7 +35,7 @@ body{
 .conteudo{
     width: 80%;
     margin:80px auto;
-    border: 5px solid #000;
+    border: 5px solid #fff;
 }
 
 .editar{
@@ -59,4 +59,57 @@ body{
     color:#f00;
     background:#fff;
     border: 1px solid #f00;
+}
+
+
+
+form{
+    width: 60%;
+    margin: 2em auto ;
+    padding: 3em 4em 2em;
+    border: 1px solid #777777a2;
+}
+
+.salvar{
+    background:  #185201;
+    color: #fff;
+    padding: 1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 10em;
+}
+.salvar:hover
+{
+    color:#185201;
+    background: #fff;
+    border: 1px solid #185201;
+}
+.limpar{
+    padding: 0.6em 1em;
+    background: #f8d700;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 12em;
+}
+.limpar:hover
+{
+    color:#f8d700;
+    background: #fff;
+    border: 1px solid #f8d700;
+}
+input[type='text']{
+    padding: 1em 1.5em;
+    width: 60%;
+    margin-bottom: 1em;
+    border-radius: 8px;
+}
+.descricoes{
+    width: 20%;
+    text-align: right;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+input[type='text'] , .descricoes{
+    display: inline-block;
 }
