@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import sys
 sys.path.append('/Users/900161/Documents/TrabalhosPython/Aula36-copia/')
+
 from Controller.pessoa_controller import PessoaController
 from Controller.endereco_controller import EnderecoController
 from Model.endereco import Endereco
@@ -10,7 +11,6 @@ app = Flask(__name__)
 pessoa_controller = PessoaController()
 end_controller = EnderecoController()
 nome = 'Cadastros'
-
 
 @app.route('/')
 def inicio():
@@ -23,19 +23,33 @@ def listar():
 
 @app.route('/cadastrar')
 def cadastrar():
-    id = request.args['id']
-    pessoa = pessoa_controller.buscar_por_id(id)
+    pessoa = Pessoa()
+    pessoa.endereco = Endereco()
+    if 'id' in request.args:
+        id = request.args['id']
+        pessoa = pessoa_controller.buscar_por_id(id)
     return render_template('cadastrar.html', titulo_app = nome, pessoa = pessoa )
 
+
+@app.route('/excluir')
+def excluir():
+    id = int(request.args['id'])
+    id_end = request.args['id_end']
+    pessoa_controller.deletar(id)
+    if id_end != 'None':
+        end_controller.deletar(id_end)
+    return redirect('/listar')
 
 @app.route('/salvar')
 def salvar():
     pessoa = Pessoa()
+    pessoa.id = request.args['id']
     pessoa.nome = request.args['nome']
     pessoa.sobrenome = request.args['sobrenome']
     pessoa.idade = request.args['idade']
 
     end = Endereco()
+    end.id = request.args['endereco_id']
     end.logradouro = request.args['logradouro']
     end.numero = request.args['numero']
     end.complemento = request.args['complemento']
@@ -44,7 +58,10 @@ def salvar():
     end.cep = request.args['cep']
 
     pessoa.endereco = end
-    pessoa_controller.salvar(pessoa)
+    if pessoa.id == 0:
+        pessoa_controller.salvar(pessoa)
+    else:
+        pessoa_controller.alterar(pessoa)
     return redirect('/listar')
 
 app.run(debug=True)

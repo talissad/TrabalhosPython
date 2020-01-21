@@ -1,6 +1,6 @@
 body{
-    background: #fd6100;
     background: #ccc;
+    color:#fff;
 }
 #tabela-pessoa{
     width: 95%;
@@ -23,7 +23,7 @@ body{
 .btn-cadastro{
     color:#fff;
     background: #185201;
-    margin: 0.5em;
+    margin: 2.2 em ;
     padding: 10px;
     text-decoration: none;
 }
@@ -35,9 +35,16 @@ body{
 .conteudo{
     width: 80%;
     margin:80px auto;
-    border: 5px solid #fff;
 }
 
+
+/* Formularios */
+form{
+    width: 60%;
+    margin: 2em auto ;
+    padding: 3em 4em 2em;
+    border: 1px solid #777777a2;
+}
 .editar{
     color:#fff;
     padding: 0.2em;
@@ -59,15 +66,6 @@ body{
     color:#f00;
     background:#fff;
     border: 1px solid #f00;
-}
-
-
-
-form{
-    width: 60%;
-    margin: 2em auto ;
-    padding: 3em 4em 2em;
-    border: 1px solid #777777a2;
 }
 
 .salvar{

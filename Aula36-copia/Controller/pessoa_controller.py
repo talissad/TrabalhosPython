@@ -3,6 +3,7 @@ sys.path.append('/Users/900161/Documents/TrabalhosPython/Aula36-copia/')
 
 from Dao.pessoa_dao import PessoaDao
 from Model.pessoa import Pessoa
+from Model.endereco import Endereco
 from Controller.endereco_controller import EnderecoController
 
 class PessoaController:
@@ -18,6 +19,7 @@ class PessoaController:
             pessoa.nome = p[1]
             pessoa.sobrenome = p[2]
             pessoa.idade = p[3]
+            pessoa.endereco = Endereco()
             pessoa.endereco.id = p[5]
             pessoa.endereco.logradouro = p[6]
             pessoa.endereco.numero = p[7]
@@ -49,6 +51,7 @@ class PessoaController:
         return self.dao.salvar(pessoa)
 
     def alterar(self, pessoa:Pessoa):
+        self.endereco_controller.alterar(pessoa.endereco)
         self.dao.alterar(pessoa)
 
     def deletar(self, id):
