@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{titulo_app}} - Cadastrar</title>
+    <link rel="stylesheet" href="../static/estilo.css">
+</head>
+<body>
+    <div class="conteudo">
+        <form action="/salvar" method="get">
+            <input type="hidden" name="id" id="id" value="{{squads.id}}"> <br/>
+            <div class="descricoes"> 
+                
+                <label for="nome">Nome:</label>
+            </div>
+            <input type="text" name="nome" id="nome" placeholder="Digite o nome: " value="{{squads.nome}}"> <br/>
+            <div class="descricoes"> 
+                
+                
+                <label for="descricao">Descrição:</label>
+            </div>
+            <input type="text" name="descricao" id="descricao" value="{{squads.descricao}}"> <br/>
+            <div class="descricoes"> 
+
+                
+                <label for="numeroPessoas">Número de Integrantes: </label>
+            </div>
+            <input type="text" name="numeroPessoas" id="numeroPessoas" value="{{squads.numeroPessoas}}"> <br/>
+            <div class="descricoes"> 
+
+
+                <label for="linguagemBackEnd">Linguagem BackEnd:</label>
+            </div>
+            <input type="text" name="linguagemBackEnd" id="linguagemBackEnd" value="{{squads.linguagemBackEnd}}"> <br/>
+            <div class="descricoes"> 
+
+
+                <label for="frameworkFrontEnd">Framework do FrontEnd:</label>
+            </div>
+            <input type="text" name="frameworkFrontEnd" id="frameworkFrontEnd" value="{{squads.frameworkFrontEnd}}"> <br/>
+            <div class="descricoes"> 
+
+            <hr/>
+            <input type="submit" value="Salvar" class="salvar">
+            <a href="/cadastrar" class="limpar">Limpar</a>
+        </form>
+    </div>
+</body>
+</html>
