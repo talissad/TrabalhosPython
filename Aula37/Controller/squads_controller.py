@@ -31,13 +31,11 @@ class SquadsController:
         squads.frameworkFrontEnd = p[5]
         return squads
 
-    def salvar(self):
-        squads.id = self.squads_controller.salvar()
+    def salvar(self, squads):
         return self.dao.salvar(squads)
 
-    # def alterar(self, ):
-    #     self.endereco_controller.alterar(pessoa.endereco)
-    #     self.dao.alterar(pessoa)
+    def alterar(self, squads):
+        self.dao.alterar(squads)
 
     def deletar(self, id):
         self.dao.deletar(id)

@@ -19,7 +19,7 @@ class SquadsDao:
         resultado = self.cursor.fetchone()
         return resultado
 
-    def salvar(self):
+    def salvar(self, squads):
         comando = f""" INSERT INTO squads
         (
             Nome,
@@ -30,11 +30,11 @@ class SquadsDao:
         )
         VALUES
         (
-            '{squads.Nome}',
-            '{squads.Descricao}',
-            {squads.NumeroPessoas},
-            '{squads.LinguagemBackEnd}',
-            '{squads.FrameworkFrontEnd}'
+            '{squads.nome}',
+            '{squads.descricao}',
+            {squads.numeroPessoas},
+            '{squads.linguagemBackEnd}',
+            '{squads.frameworkFrontEnd}'
 
         )"""
         self.cursor.execute(comando)
@@ -42,14 +42,14 @@ class SquadsDao:
         id_inserido = self.cursor.lastrowid
         return id_inserido
 
-    def alterar(self):
+    def alterar(self, squads):
         comando = f""" UPDATE squads
         SET
-            Nome = '{squads.Nome}',
-            Descricao ='{squads.Descricao}',
-            NumeroPessoas = {squads.NumeroPessoas},
-            LinguagemBackEnd = {squads.LinguagemBackEnd}
-            FrameworkFrontEnd = {squads.FrameworkFrontEnd}
+            Nome = '{squads.nome}',
+            Descricao ='{squads.descricao}',
+            NumeroPessoas = {squads.numeroPessoas},
+            LinguagemBackEnd = {squads.linguagemBackEnd}
+            FrameworkFrontEnd = {squads.frameworkFrontEnd}
 
         WHERE ID = {squads.id}
         """
@@ -60,3 +60,4 @@ class SquadsDao:
         comando = f"DELETE FROM squads WHERE ID = {id}"
         self.cursor.execute(comando)
         self.conexao.commit()
+    

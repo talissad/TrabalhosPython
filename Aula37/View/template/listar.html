@@ -24,7 +24,7 @@
 
             </thead>
             <tbody>
-                {% for p in lista %}
+                {% for s in lista %}
                 <tr>
                     <td>{{ s.id }}</td>
                     <td>{{ s.nome }}</td>
@@ -32,17 +32,14 @@
                     <td>{{ s.numeroPessoas }}</td>
                     <td>{{ s.linguagemBackEnd }}</td>
                     <td>{{ s.frameworkFrontEnd }}</td>
-
-
                     <td>
-                        <a href="/cadastrar?id={{ p.id }}" class="editar">Editar</a>
-                        <a href="/excluir?id={{ p.id }}&id_end={{ p.endereco.id }}" class="excluir">Excluir</a>
+                        <a href="/cadastrar?id={{ s.id }}" class="editar">Editar</a>
+                        <a href="/excluir?id={{ s.id }}" class="excluir">Excluir</a>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-
     </div>
 </body>
 </html>

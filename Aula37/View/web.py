@@ -5,7 +5,7 @@ sys.path.append('/Users/900161/Documents/TrabalhosPython/Aula37/')
 from Controller.squads_controller import SquadsController
 from Model.squads import Squads
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="template")
 squads_controller = SquadsController()
 nome = 'Cadastros'
 
