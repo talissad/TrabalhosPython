@@ -9,14 +9,27 @@ class SquadsDao:
 
     def listar_todos(self):
         #comando = f"SELECT * FROM squads"
-        comando = f"SELECT * FROM squads AS s LEFT JOIN linguagemBackend AS l  s.linguagemBackend_id = l.id LEFT JOIN frameworkFrontend as f  ON s.frameworkFrontend_id = f.id LEFT JOIN sgbds as b ON s.sgbds_id = b.id"
+        comando = f"""SELECT * FROM squads AS s 
+                    LEFT JOIN linguagemBackend AS l 
+                    ON s.linguagemBackend_id = l.id 
+                    LEFT JOIN frameworkFrontend as f  
+                    ON s.frameworkFrontend_id = f.id 
+                    LEFT JOIN sgbds as b 
+                    ON s.sgbds_id = b.id"""
         self.cursor.execute(comando)
         resultado = self.cursor.fetchall()
         return resultado
     
     def buscar_por_id(self, id):
         #comando = f"SELECT * FROM squads WHERE P.ID = {id}"
-        comando = f"SELECT * FROM squads AS s LEFT JOIN linguagemBackend AS l  s.linguagemBackend_id = l.id LEFT JOIN frameworkFrontend as f  ON s.frameworkFrontend_id = f.id LEFT JOIN sgbds as b ON s.sgbds_id = b.id  WHERE s.ID = {id}"
+        comando = f"""SELECT * FROM squads AS s 
+                    LEFT JOIN linguagemBackend AS l 
+                    ON s.linguagemBackend_id = l.id 
+                    LEFT JOIN frameworkFrontend as f  
+                    ON s.frameworkFrontend_id = f.id 
+                    LEFT JOIN sgbds as b 
+                    ON s.sgbds_id = b.id
+                      WHERE s.ID = {id}"""
         self.cursor.execute(comando)
         resultado = self.cursor.fetchone()
         return resultado
@@ -27,8 +40,8 @@ class SquadsDao:
             Nome,
             Descricao,
             NumeroPessoas,
-            linguagemBackend_id
-            FrameworkFrontend_id
+            linguagemBackend_id,
+            FrameworkFrontend_id,
             Sgbds_id
         )
         VALUES

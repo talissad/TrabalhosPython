@@ -25,8 +25,8 @@ def inicio():
 
 @app.route('/listar')
 def listar():
-    times = squads_controller.listar_todos()
-    return render_template('listar.html', titulo_app = nome, lista = times)
+    squads = squads_controller.listar_todos()
+    return render_template('listar.html', titulo_app = nome, lista = squads)
 
 @app.route('/cadastrar')
 def cadastrar():
@@ -37,6 +37,7 @@ def cadastrar():
 
     if 'id' in request.args:
         id = request.args['id']
+        
         squads = squads_controller.buscar_por_id(id)
     return render_template('cadastrar.html', titulo_app = nome, squads = squads )
 
@@ -57,11 +58,11 @@ def salvar():
 
     back = LinguagemBackend()
     back.id = request.args['id_backend']
-    back.nome = request.args['linguagemBackEnd']
+    back.nome = request.args['linguagemBackend']
 
     front = FrameworkFrontend()
     front.id = request.args['id_front']
-    front.nome = request.args['frameworkFrontEnd']
+    front.nome = request.args['frameworkFrontend']
 
     sgbds = Sgbds()
     sgbds.id = request.args['id_sgbds']
