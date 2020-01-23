@@ -57,7 +57,7 @@ def salvar():
 
     back = LinguagemBackend()
     back.id = request.args['id_backend']
-    back.linguagem = request.args['linguagemBackEnd']
+    back.nome = request.args['linguagemBackEnd']
 
     front = FrameworkFrontend()
     front.id = request.args['id_front']
@@ -65,7 +65,7 @@ def salvar():
 
     sgbds = Sgbds()
     sgbds.id = request.args['id_sgbds']
-    sgbds.nomebd = request.args['nomebd']
+    sgbds.nome = request.args['nome']
 
     squads.linguagemBackend = back
     squads.frameworkFrontend = front

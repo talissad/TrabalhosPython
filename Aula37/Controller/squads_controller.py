@@ -32,7 +32,7 @@ class SquadsController:
             
             squads.linguagemBackend = LinguagemBackend()
             squads.linguagemBackend.id =  p[6]
-            squads.linguagemBackend.linguagem =  p[7]
+            squads.linguagemBackend.nome =  p[7]
             
             squads.frameworkFrontend = FrameworkFrontend()
             squads.frameworkFrontend.id =  p[8]
@@ -40,7 +40,7 @@ class SquadsController:
             
             squads.sgbds = Sgbds()
             squads.sgbds.id =  p[10]
-            squads.sgbds.nomedb =  p[11]
+            squads.sgbds.nome =  p[11]
             
             lista_times.append(squads)
         return lista_times
@@ -57,7 +57,7 @@ class SquadsController:
 
         squads.linguagemBackend = LinguagemBackend()
         squads.linguagemBackend.id = p[6]
-        squads.linguagemBackend.linguagem = p[7]
+        squads.linguagemBackend.nome = p[7]
 
         squads.frameworkFrontend = FrameworkFrontend()
         squads.frameworkFrontend.id = p[8]
@@ -65,7 +65,7 @@ class SquadsController:
 
         squads.sgbds = Sgbds()
         squads.sgbds.id = p[10]
-        squads.sgbds.fk_sgbds = p[11]
+        squads.sgbds.nome = p[11]
        
         return squads
 

@@ -22,11 +22,11 @@ class SgbdsDao:
     def salvar(self, sgbds:Sgbds):
         comando = f""" INSERT INTO sgbds
         (
-            nomebd
+            nome
         )
         VALUES
         (
-            '{sgbds.nomebd}',
+            '{sgbds.nome}',
         )"""
         self.cursor.execute(comando)
         self.conexao.commit()
@@ -36,7 +36,7 @@ class SgbdsDao:
     def alterar(self, sgbds:Sgbds):
         comando = f""" UPDATE sgbds
         SET
-            nomebd= '{sgbds.nomebd}'
+            nome= '{sgbds.nome}'
         WHERE ID = {sgbds.id}
         """
         self.cursor.execute(comando)

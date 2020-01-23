@@ -22,11 +22,11 @@ class BackDao:
     def salvar(self, linguagemBackend:LinguagemBackend):
         comando = f""" INSERT INTO linguagemBackend
         (
-            linguagem
+            nome
         )
         VALUES
         (
-            '{linguagemBackend.linguagem}',
+            '{linguagemBackend.nome}',
         )"""
         self.cursor.execute(comando)
         self.conexao.commit()
@@ -36,7 +36,7 @@ class BackDao:
     def alterar(self, linguagemBackend:LinguagemBackend):
         comando = f""" UPDATE linguagemBackend
         SET
-            linguagem = '{linguagemBackend.linguagem}'
+            nome = '{linguagemBackend.nome}'
         WHERE ID = {linguagemBackend.id}
         """
         self.cursor.execute(comando)
