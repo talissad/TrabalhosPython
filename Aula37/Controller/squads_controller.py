@@ -31,15 +31,15 @@ class SquadsController:
             squads.frameworkFrontend = p[5]
             
             squads.linguagemBackend = LinguagemBackend()
-            #squads.linguagemBackend.id =  p[6]
+            squads.linguagemBackend.id =  p[6]
             squads.linguagemBackend.nome =  p[7]
             
             squads.frameworkFrontend = FrameworkFrontend()
-            #squads.frameworkFrontend.id =  p[8]
+            squads.frameworkFrontend.id =  p[8]
             squads.frameworkFrontend.nome =  p[9]
             
             squads.sgbds = Sgbds()
-            #squads.sgbds.id =  p[10]
+            squads.sgbds.id =  p[10]
             squads.sgbds.nome =  p[11]
             
             lista_times.append(squads)
@@ -77,7 +77,7 @@ class SquadsController:
 
     def alterar(self, squads):
         self.backend_controller.alterar(squads.linguagemBackend)
-        self.framework_frontend_controller.alterar(squads.FrameworkFrontend)
+        self.frontend_controller.alterar(squads.frameworkFrontend)
         self.sgbds_controller.alterar(squads.sgbds)
         self.dao.alterar(squads)
 

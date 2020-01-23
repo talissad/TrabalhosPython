@@ -9,42 +9,42 @@ class FrontDao:
     cursor = conexao.cursor()
 
     def listar_todos(self):
-        comando = f"SELECT * FROM FrameworkFrontend"
+        comando = f"SELECT * FROM frameworkFrontend"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchall()
         return resultado
     
     def buscar_por_id(self, id):
-        comando = f"SELECT * FROM FrameworkFrontend WHERE ID = {id}"
+        comando = f"SELECT * FROM frameworkFrontend WHERE ID = {id}"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchone()
         return resultado
 
-    def salvar(self, FrameworkFrontend:FrameworkFrontend):
-        comando = f""" INSERT INTO FrameworkFrontend
+    def salvar(self, frameworkFrontend:FrameworkFrontend):
+        comando = f""" INSERT INTO frameworkFrontend
         (
             nome
         )
         VALUES
         (
-            '{FrameworkFrontend.nome}'
+            '{frameworkFrontend.nome}'
         )"""
         self.cursor.execute(comando)
         self.conexao.commit()
         id_inserido = self.cursor.lastrowid
         return id_inserido
 
-    def alterar(self, FrameworkFrontend:FrameworkFrontend):
-        comando = f""" UPDATE FrameworkFrontend
+    def alterar(self, frameworkFrontend:FrameworkFrontend):
+        comando = f""" UPDATE frameworkFrontend
         SET
-            nome = '{FrameworkFrontend.nome}'
+            nome = '{frameworkFrontend.nome}'
             
-        WHERE ID = {FrameworkFrontend.id}
+        WHERE ID = {frameworkFrontend.id}
         """
         self.cursor.execute(comando)
         self.conexao.commit()
 
     def deletar(self, id):
-        comando = f"DELETE FROM FrameworkFrontend WHERE ID = {id}"
+        comando = f"DELETE FROM frameworkFrontend WHERE ID = {id}"
         self.cursor.execute(comando)
         self.conexao.commit()
