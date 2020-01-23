@@ -19,6 +19,7 @@
                     <th>Numero de Pessoas</th>
                     <th>LinguagemBackEnd</th>
                     <th>FrameworkFrontEnd</th>
+                    <th>Sgdbs</th>
                     <th></th>
                 </tr>
 
@@ -30,8 +31,9 @@
                     <td>{{ s.nome }}</td>
                     <td>{{ s.descricao }}</td>
                     <td>{{ s.numeroPessoas }}</td>
-                    <td>{{ s.linguagemBackEnd }}</td>
-                    <td>{{ s.frameworkFrontEnd }}</td>
+                    <td>{{ s.linguagemBackEnd.linguagem }}</td>
+                    <td>{{ s.frameworkFrontEnd.nome }}</td>
+                    <td>{{ s.sgbds.nomedb }}</td>
                     <td>
                         <a href="/cadastrar?id={{ s.id }}" class="editar">Editar</a>
                         <a href="/excluir?id={{ s.id }}" class="excluir">Excluir</a>

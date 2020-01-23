@@ -31,20 +31,16 @@ class SquadsController:
             squads.frameworkFrontend = p[5]
             
             squads.linguagemBackend = LinguagemBackend()
-            squads.linguagemBackend.id =  p[0]
-            squads.linguagemBackend.id =  p[0]
-            squads.linguagemBackend.id =  p[0]
+            squads.linguagemBackend.id =  p[6]
+            squads.linguagemBackend.linguagem =  p[7]
             
             squads.frameworkFrontend = FrameworkFrontend()
-            squads.frameworkFrontend.id =  p[0]
-            squads.frameworkFrontend.id =  p[0]
-            squads.frameworkFrontend.id =  p[0]
+            squads.frameworkFrontend.id =  p[8]
+            squads.frameworkFrontend.nome =  p[9]
             
             squads.sgbds = Sgbds()
-            squads.sgbds.id =  p[0]
-            squads.sgbds.id =  p[0]
-            squads.sgbds.id =  p[0]
-
+            squads.sgbds.id =  p[10]
+            squads.sgbds.nomedb =  p[11]
             
             lista_times.append(squads)
         return lista_times
@@ -59,28 +55,30 @@ class SquadsController:
         squads.linguagemBackend = p[4]
         squads.frameworkFrontend = p[5]
 
+        squads.linguagemBackend = LinguagemBackend()
         squads.linguagemBackend.id = p[6]
         squads.linguagemBackend.linguagem = p[7]
-        squads.linguagemBackend.fk_back = p[8]
 
-        squads.frameworkFrontend.id = p[9]
-        squads.frameworkFrontend.nome = p[10]
-        squads.frameworkFrontend.fk_front = p[11]
+        squads.frameworkFrontend = FrameworkFrontend()
+        squads.frameworkFrontend.id = p[8]
+        squads.frameworkFrontend.nome = p[9]
 
-        squads.sgbds.id = p[12]
-        squads.sgbds.fk_sgbds = p[13]
-        squads.sgbds.nomebd = p[14]
+        squads.sgbds = Sgbds()
+        squads.sgbds.id = p[10]
+        squads.sgbds.fk_sgbds = p[11]
        
         return squads
 
     def salvar(self, squads):
         squads.linguagemBackend.id = self.linguagem_backend_controller.salvar(squads.linguagemBackend)
-        #### Verificar como salvar todos os 4 banco de dados juntos
+        squads.frameworkFrontend.id = self.framework_frontend_controller.salvar(squads.frameworkFrontend)
+        squads.sgbds.id = self.sgbds_controller.salvar(squads.sgbds)
         return self.dao.salvar(squads)
 
     def alterar(self, squads):
         self.linguagem_backend_controller.alterar(squads.linguagem_backend)
-        #### Verificar como altera todos os 4 banco
+        self.framework_frontend_controller.alterar(squads.framework_controller)
+        self.sgbds_controller.alterar(squads.sgbds)
         self.dao.alterar(squads)
 
     def deletar(self, id):

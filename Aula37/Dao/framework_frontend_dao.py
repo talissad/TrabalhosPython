@@ -5,7 +5,7 @@ from Model.framework_frontend import FrameworkFrontend
 
 
 class FrontDao:
-    conexao = MySQLdb.connect(host='127.0.0.1', database='aulabd', user='root', passwd='')
+    conexao = MySQLdb.connect(host='mysql.padawans.dev', database='padawans11', user='padawans11', passwd='at2019')
     cursor = conexao.cursor()
 
     def listar_todos(self):
@@ -23,13 +23,11 @@ class FrontDao:
     def salvar(self, FrameworkFrontend:FrameworkFrontend):
         comando = f""" INSERT INTO FrameworkFrontend
         (
-            nome,
-            fk_front
+            nome
         )
         VALUES
         (
-            '{FrameworkFrontend.nome}',
-            {FrameworkFrontend.fk_front}
+            '{FrameworkFrontend.nome}'
         )"""
         self.cursor.execute(comando)
         self.conexao.commit()
@@ -39,8 +37,7 @@ class FrontDao:
     def alterar(self, FrameworkFrontend:FrameworkFrontend):
         comando = f""" UPDATE FrameworkFrontend
         SET
-            nome = '{FrameworkFrontend.nome}',
-            fk_front = '{FrameworkFrontend.fk_front}',
+            nome = '{FrameworkFrontend.nome}'
             
         WHERE ID = {FrameworkFrontend.id}
         """

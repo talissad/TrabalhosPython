@@ -4,7 +4,7 @@ import MySQLdb
 from Model.linguagem_backend import LinguagemBackend
 
 class BackDao:
-    conexao = MySQLdb.connect(host='127.0.0.1', database='aulabd', user='root', passwd='')
+    conexao = MySQLdb.connect(host='mysql.padawans.dev', database='padawans11', user='padawans11', passwd='at2019')
     cursor = conexao.cursor()
 
     def listar_todos(self):
@@ -22,13 +22,11 @@ class BackDao:
     def salvar(self, linguagemBackend:LinguagemBackend):
         comando = f""" INSERT INTO linguagemBackend
         (
-            linguagem,
-            fk_back
+            linguagem
         )
         VALUES
         (
             '{linguagemBackend.linguagem}',
-            {linguagemBackend.fk_back}
         )"""
         self.cursor.execute(comando)
         self.conexao.commit()
@@ -38,8 +36,7 @@ class BackDao:
     def alterar(self, linguagemBackend:LinguagemBackend):
         comando = f""" UPDATE linguagemBackend
         SET
-            linguagem = '{linguagemBackend.linguagem}',
-            fk_back = '{linguagemBackend.fk_back}',
+            linguagem = '{linguagemBackend.linguagem}'
         WHERE ID = {linguagemBackend.id}
         """
         self.cursor.execute(comando)

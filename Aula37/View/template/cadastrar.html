@@ -33,14 +33,25 @@
 
                 <label for="linguagemBackEnd">Linguagem BackEnd:</label>
             </div>
-            <input type="text" name="linguagemBackEnd" id="linguagemBackEnd" value="{{squads.linguagemBackEnd}}"> <br/>
+            <input type="text" name="linguagemBackEnd" id="linguagemBackEnd" value="{{squads.linguagemBackEnd.linguagem}}"> <br/>
             <div class="descricoes"> 
 
 
                 <label for="frameworkFrontEnd">Framework do FrontEnd:</label>
             </div>
-            <input type="text" name="frameworkFrontEnd" id="frameworkFrontEnd" value="{{squads.frameworkFrontEnd}}"> <br/>
+            <input type="text" name="frameworkFrontEnd" id="frameworkFrontEnd" value="{{squads.frameworkFrontEnd.nome}}"> <br/>
             <div class="descricoes"> 
+
+                <label for="sgbds">Framework do FrontEnd:</label>
+            </div>
+            <input type="text" name="sgbds" id="sgbds" value="{{squads.sgbds.nome}}"> <br/>
+            <div class="descricoes"> 
+
+
+
+            <input type="hidden" name="id_front" id="id_front" value="{{squads.frameworkFrontEnd.id}}"> <br/>
+            <input type="hidden" name="id_backend" id="id_backend" value="{{squads.linguagemBackend.id}}"> <br/>
+            <input type="hidden" name="id_sgbds" id="id_sgbds" value="{{squads.sgbds.id}}"> <br/>
 
             <hr/>
             <input type="submit" value="Salvar" class="salvar">

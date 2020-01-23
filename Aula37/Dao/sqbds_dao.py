@@ -4,7 +4,7 @@ import MySQLdb
 from Model.sgbds import Sgbds
 
 class SgbdsDao:
-    conexao = MySQLdb.connect(host='127.0.0.1', database='aulabd', user='root', passwd='')
+    conexao = MySQLdb.connect(host='mysql.padawans.dev', database='padawans11', user='padawans11', passwd='at2019')
     cursor = conexao.cursor()
 
     def listar_todos(self):
@@ -22,12 +22,10 @@ class SgbdsDao:
     def salvar(self, sgbds:Sgbds):
         comando = f""" INSERT INTO sgbds
         (
-            fk_sgbds,
             nomebd
         )
         VALUES
         (
-            '{sgbds.fk_sgbds}',
             '{sgbds.nomebd}',
         )"""
         self.cursor.execute(comando)
@@ -38,7 +36,6 @@ class SgbdsDao:
     def alterar(self, sgbds:Sgbds):
         comando = f""" UPDATE sgbds
         SET
-            fk_sgbds = '{sgbds.fk_sgbds}',
             nomebd= '{sgbds.nomebd}'
         WHERE ID = {sgbds.id}
         """

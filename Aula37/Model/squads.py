@@ -1,6 +1,9 @@
-from framework_frontend import FrameworkFrontend
-from linguagem_backend import LinguagemBackend
-from sgbds import Sgbds
+import sys
+sys.path.append('/Users/900161/Documents/TrabalhosPython/Aula37')
+
+from Model.framework_frontend import FrameworkFrontend
+from Model.linguagem_backend import LinguagemBackend
+from Model.sgbds import Sgbds
 
 class Squads:
     def __init__(self):
@@ -8,11 +11,9 @@ class Squads:
         self.nome = ''
         self.descricao= ''
         self.numeroPessoas = 0
-        # self.linguagemBackend = ''
-        # self.frameworkFrontend = ''
-        self.linguagemBackend = ()
-        self.frameworkFrontend = ()
-        self.Sgbds = ()
+        self.linguagemBackend = None
+        self.frameworkFrontend = None
+        self.Sgbds = None
 
     def __str__(self):
         return f'{self.id};{self.nome};{self.descricao};{self.numeroPessoas};{self.linguagemBackEnd};{self.frameworkFrontEnd};{self.sgbds}'

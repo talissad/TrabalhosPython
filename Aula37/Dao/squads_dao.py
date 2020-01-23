@@ -4,21 +4,19 @@ sys.path.append('C:/Users/900161/Documents/TrabalhosPython/Aula37')
 from Model.squads import Squads
 
 class SquadsDao:
-    conexao = MySQLdb.connect(host='127.0.0.1', database='aulabd', user='root', passwd='')
+    conexao = MySQLdb.connect(host='mysql.padawans.dev', database='padawans11', user='padawans11', passwd='at2019')
     cursor = conexao.cursor()
 
     def listar_todos(self):
-        comando = f"SELECT * FROM squads"
-        comando = f"SELECT * FROM squads AS s LEFT JOIN linguagemBackend AS l LEFT JOIN frameworkFrontend as f LEFT JOIN sgbds as b ON s.linguagemBackend.id = l.ID"
+        #comando = f"SELECT * FROM squads"
+        comando = f"SELECT * FROM squads AS s LEFT JOIN linguagemBackend AS l  s.linguagemBackend_id = l.id LEFT JOIN frameworkFrontend as f  ON s.frameworkFrontend_id = f.id LEFT JOIN sgbds as b ON s.sgbds_id = b.id"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchall()
         return resultado
     
     def buscar_por_id(self, id):
-        comando = f"SELECT * FROM squads WHERE P.ID = {id}"
-        ##comando = f"SELECT * FROM squads AS s LEFT JOIN linguagemBackend AS l LEFT JOIN frameworkFrontend as f LEFT JOIN Sgbds as b ON
-        ##### s.linguagemBackend.id = l.ID WHERE s.ID = {id}"
-
+        #comando = f"SELECT * FROM squads WHERE P.ID = {id}"
+        comando = f"SELECT * FROM squads AS s LEFT JOIN linguagemBackend AS l  s.linguagemBackend_id = l.id LEFT JOIN frameworkFrontend as f  ON s.frameworkFrontend_id = f.id LEFT JOIN sgbds as b ON s.sgbds_id = b.id  WHERE s.ID = {id}"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchone()
         return resultado
@@ -29,25 +27,18 @@ class SquadsDao:
             Nome,
             Descricao,
             NumeroPessoas,
-            LinguagemBackend
-            FrameworkFrontend
-
-            LinguagemBackend.id
-            FrameworkFrontend.id
-            Sgbds.id
+            linguagemBackend_id
+            FrameworkFrontend_id
+            Sgbds_id
         )
         VALUES
         (
             '{squads.nome}',
             '{squads.descricao}',
             {squads.numeroPessoas},
-            '{squads.linguagemBackend}',
-            '{squads.frameworkFrontend}'
-
             '{squads.linguagemBackend.id}',
             '{squads.frameworkFrontend.id}'
             '{squads.sgbds.id}'
-
         )"""
         self.cursor.execute(comando)
         self.conexao.commit()
@@ -60,9 +51,9 @@ class SquadsDao:
             Nome = '{squads.nome}',
             Descricao ='{squads.descricao}',
             NumeroPessoas = {squads.numeroPessoas},
-            LinguagemBackend = '{squads.linguagemBackend}',
-            FrameworkFrontend =' {squads.frameworkFrontend}'
-
+            LinguagemBackend_id = '{squads.linguagemBackend.id}',
+            FrameworkFrontend_id =' {squads.frameworkFrontend.id}'
+            Sgbds_id = {squads.sgbds.id}
         WHERE ID = {squads.id}
         """
         self.cursor.execute(comando)
