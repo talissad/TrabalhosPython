@@ -13,7 +13,7 @@ class Squads:
         self.numeroPessoas = 0
         self.linguagemBackend = None
         self.frameworkFrontend = None
-        self.Sgbds = None
+        self.sgbds = None
 
     def __str__(self):
         return f'{self.id};{self.nome};{self.descricao};{self.numeroPessoas};{self.linguagemBackEnd};{self.frameworkFrontEnd};{self.sgbds}'

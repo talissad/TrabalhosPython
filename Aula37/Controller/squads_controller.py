@@ -27,20 +27,18 @@ class SquadsController:
             squads.nome = p[1]
             squads.descricao = p[2]
             squads.numeroPessoas = p[3]
-            squads.linguagemBackend = p[4]
-            squads.frameworkFrontend = p[5]
-            
+
             squads.linguagemBackend = LinguagemBackend()
-            squads.linguagemBackend.id =  p[6]
-            squads.linguagemBackend.nome =  p[7]
+            squads.linguagemBackend.id =  p[4]
+            squads.linguagemBackend.nome =  p[5]
             
             squads.frameworkFrontend = FrameworkFrontend()
-            squads.frameworkFrontend.id =  p[8]
-            squads.frameworkFrontend.nome =  p[9]
+            squads.frameworkFrontend.id =  p[6]
+            squads.frameworkFrontend.nome =  p[7]
             
             squads.sgbds = Sgbds()
-            squads.sgbds.id =  p[10]
-            squads.sgbds.nome =  p[11]
+            squads.sgbds.id =  p[8]
+            squads.sgbds.nome =  p[9]
             
             lista_times.append(squads)
         return lista_times
@@ -52,26 +50,24 @@ class SquadsController:
         squads.nome = p[1]
         squads.descricao = p[2]
         squads.numeroPessoas = p[3]
-        squads.linguagemBackend = p[4]
-        squads.frameworkFrontend = p[5]
 
         squads.linguagemBackend = LinguagemBackend()
-        squads.linguagemBackend.id = p[6]
-        squads.linguagemBackend.nome = p[7]
+        squads.linguagemBackend.id = p[4]
+        squads.linguagemBackend.nome = p[5]
 
         squads.frameworkFrontend = FrameworkFrontend()
-        squads.frameworkFrontend.id = p[8]
-        squads.frameworkFrontend.nome = p[9]
+        squads.frameworkFrontend.id = p[6]
+        squads.frameworkFrontend.nome = p[7]
 
         squads.sgbds = Sgbds()
-        squads.sgbds.id = p[10]
-        squads.sgbds.nome = p[11]
+        squads.sgbds.id = p[8]
+        squads.sgbds.nome = p[9]
        
         return squads
 
     def salvar(self, squads):
-        squads.linguagemBackend.id = self.backend_controller.salvar(squads.backend_controller)
-        squads.frameworkFrontend.id = self.framework_frontend_controller.salvar(squads.frontend_controller)
+        squads.linguagemBackend.id = self.backend_controller.salvar(squads.linguagemBackend)
+        squads.frameworkFrontend.id = self.frontend_controller.salvar(squads.frameworkFrontend)
         squads.sgbds.id = self.sgbds_controller.salvar(squads.sgbds)
         return self.dao.salvar(squads)
 

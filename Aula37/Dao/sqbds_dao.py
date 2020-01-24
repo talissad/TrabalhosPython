@@ -26,7 +26,7 @@ class SgbdsDao:
         )
         VALUES
         (
-            '{sgbds.nome}',
+            '{sgbds.nome}'
         )"""
         self.cursor.execute(comando)
         self.conexao.commit()

@@ -9,7 +9,7 @@ class SquadsDao:
 
     def listar_todos(self):
         #comando = f"SELECT * FROM squads"
-        comando = f"""SELECT * FROM squads AS s 
+        comando = f"""SELECT s.id, s.nome, s.descricao, s.numeroPessoas, l.id, l.nome, f.id, f.nome, b.id, b.nome FROM squads AS s
                     LEFT JOIN linguagemBackend AS l 
                     ON s.linguagemBackend_id = l.id 
                     LEFT JOIN frameworkFrontend as f  
@@ -22,7 +22,7 @@ class SquadsDao:
     
     def buscar_por_id(self, id):
         #comando = f"SELECT * FROM squads WHERE P.ID = {id}"
-        comando = f"""SELECT * FROM squads AS s 
+        comando = f"""SELECT s.id, s.nome, s.descricao, s.numeroPessoas, l.id, l.nome, f.id, f.nome, b.id, b.nome FROM squads AS s 
                     LEFT JOIN linguagemBackend AS l 
                     ON s.linguagemBackend_id = l.id 
                     LEFT JOIN frameworkFrontend as f  
@@ -50,7 +50,7 @@ class SquadsDao:
             '{squads.descricao}',
             {squads.numeroPessoas},
             '{squads.linguagemBackend.id}',
-            '{squads.frameworkFrontend.id}'
+            '{squads.frameworkFrontend.id}',
             '{squads.sgbds.id}'
         )"""
         self.cursor.execute(comando)
@@ -65,7 +65,7 @@ class SquadsDao:
             Descricao ='{squads.descricao}',
             NumeroPessoas = {squads.numeroPessoas},
             LinguagemBackend_id = '{squads.linguagemBackend.id}',
-            FrameworkFrontend_id =' {squads.frameworkFrontend.id}'
+            FrameworkFrontend_id =' {squads.frameworkFrontend.id}',
             Sgbds_id = {squads.sgbds.id}
         WHERE ID = {squads.id}
         """

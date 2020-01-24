@@ -26,7 +26,7 @@ class BackDao:
         )
         VALUES
         (
-            '{linguagemBackend.nome}',
+            '{linguagemBackend.nome}'
         )"""
         self.cursor.execute(comando)
         self.conexao.commit()

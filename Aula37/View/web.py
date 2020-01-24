@@ -12,6 +12,7 @@ from Model.framework_frontend import FrameworkFrontend
 from Model.linguagem_backend import LinguagemBackend
 from Model.sgbds import Sgbds
 
+
 app = Flask(__name__, template_folder="template")
 squads_controller = SquadsController()
 front_controller = FrameworkFrontendController()
@@ -51,22 +52,22 @@ def excluir():
 @app.route('/salvar')
 def salvar():
     squads = Squads()
-    squads.id = request.args['id']
+    squads.id = int(request.args['id'])
     squads.nome = request.args['nome']
     squads.descricao = request.args['descricao']
     squads.numeroPessoas = request.args['numeroPessoas']
 
     back = LinguagemBackend()
-    back.id = request.args['id_backend']
+    back.id = int(request.args['id_backend'])
     back.nome = request.args['linguagemBackend']
 
     front = FrameworkFrontend()
-    front.id = request.args['id_front']
+    front.id = int(request.args['id_front'])
     front.nome = request.args['frameworkFrontend']
 
     sgbds = Sgbds()
-    sgbds.id = request.args['id_sgbds']
-    sgbds.nome = request.args['nome']
+    sgbds.id = int(request.args['id_sgbds'])
+    sgbds.nome = request.args['sgbds']
 
     squads.linguagemBackend = back
     squads.frameworkFrontend = front
