@@ -48,3 +48,4 @@
 # Matheus - Python - MongoDB - angular
 # Nicole - PHP - Mysql - React
 # Tiago - Java - PostgreSQL - vue
+ 
