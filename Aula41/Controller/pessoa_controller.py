@@ -1,14 +1,23 @@
 from flask_restful import Resource
 
+from Aula41.dao.pessoa_dao import PessoaDao
+
 class PessoaController(Resource):
+    def __init__(self):
+        self.dao = PessoaDao()
+
     def get(self):
-        return 'Você está acessando o método GET'
+        msg = self.dao.list_all()
+        return msg
 
     def post(self):
-        return 'Agora você está no metodo POST'
+        msg = self.dao.insert('')
+        return msg
 
     def put(self):
-        return 'Acessando o PUT'
+        msg = self.dao.update('')
+        return msg
 
     def delete(self):
-        return 'Tem certeza? Você está no método DELETE'
+        msg = self.dao.remove(10)
+        return msg
