@@ -12,3 +12,6 @@
 # Adiciona interpretador (no canto inferior) escolhe o local + Script/python.exe
 # Cria estrutura embaixo
 # Script Path = arquivo que quer estartar
+
+
+#pip freeze > requirements.txt
