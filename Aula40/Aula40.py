@@ -1,3 +1,14 @@
-# python -m pip install --upgrade pip       -- atualizar pip
-# pip3 install virtualenv                   -- instalar maquina virtual
-# virtualenv --python="C:\Users\900161\AppData\Local\Programs\Python\Python37/python.exe" teste-virtual
+from flask import Flask
+from flask_restful import Api
+from Controllers.cerveja_controller import CervejaController
+
+app = Flask(__name__)
+api = Api(app)
+
+api.add_resource(CervejaController, '/api/cerveja')
+
+@app.route('/')
+def inicio():
+    return 'Bem vindo a API'
+
+app.run(debug=True, port=80)
