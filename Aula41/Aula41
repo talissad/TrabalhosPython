@@ -1,13 +1,21 @@
+######################      CMD      ######################
+
+
 # C:\Users\900161\Documents\TrabalhosPython\teste-virtual\Scripts\deactivate.bat                                --desativa o virtualenv
 # virtualenv --python="C:\Users\900161\AppData\Local\Programs\Python\Python37/python.exe" Aula41/virtualenv     --ativa o virtualenv
 
 # virtualenv --python='python3' Aula50/ENV                                                                      -- cria o virtualenv
 # virtualenv activate
 
-# pip3 install flask
-# pip3 install flask_restful
+# pip3 install flask                --instala o Flask
+# pip3 install flask_restful        --instala a Api
+# pip3 install flask_mysqldb        --instala o Mysql
 
 
+# Instalar o Virtual env
+
+# where python            --localiza o python
+# aula50\ENV\Scripts\activate         --ativa o env
 
 # Adiciona interpretador (no canto inferior) escolhe o local + Script/python.exe
 # Cria estrutura embaixo
