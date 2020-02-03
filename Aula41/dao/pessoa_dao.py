@@ -24,13 +24,29 @@ class PessoaDao:
         p = PessoaModel(pessoa[1], pessoa[2], pessoa[3], pessoa[0])
         return p.__dict__
 
-    def insert(self, pessoa):
-        return 'Cadastrando uma pessoa'
+    def insert(self, pessoa: PessoaModel):
+        self.cursor.execute("""
+            INSERT INTO pessoa 
+            (NOME, SOBRENOME, IDADE) 
+            VALUES('{}','{}',{})""".format(pessoa.nome, pessoa.sobrenome, pessoa.idade))
+        self.connection.commit()
+        id = self.cursor.lastrowid
+        pessoa.id = id
+        return pessoa.__dict__
 
-    def update(self, pessoa):
-        return 'Alterando uma pessoa'
+    def update(self, pessoa: PessoaModel):
+        self.cursor.execute("""
+              UPDATE pessoa 
+                  SET 
+                      NOME = '{}',
+                      SOBRENOME = '{}',
+                      IDADE = {}
+                  WHERE ID = {}
+           """.format(pessoa.nome, pessoa.sobrenome, pessoa.idade, pessoa.id))
+        self.connection.commit()
+        return pessoa.__dict__
 
     def remove(self, id):
-        self.cursor.execute(f"Delete * FROM pessoa Where id={id}")
+        self.cursor.execute("DELETE FROM pessoa WHERE ID = {}".format(id))
         self.connection.commit()
-        return f'Removido a pessoa de id: {id}'
+        return 'Removido a pessoa de id : {}'.format(id)

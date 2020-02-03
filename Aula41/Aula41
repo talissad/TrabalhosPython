@@ -1,11 +1,10 @@
 ######################      CMD      ######################
 
+# virtualenv --python="C:\Users\900161\AppData\Local\Programs\Python\Python37/python.exe" teste-virtual
 
-# C:\Users\900161\Documents\TrabalhosPython\teste-virtual\Scripts\deactivate.bat                                --desativa o virtualenv
-# virtualenv --python="C:\Users\900161\AppData\Local\Programs\Python\Python37/python.exe" Aula41/virtualenv     --ativa o virtualenv
+# deactivate
+# "Aula50/ENV/Scripts/Activate"
 
-# virtualenv --python='python3' Aula50/ENV                                                                      -- cria o virtualenv
-# virtualenv activate
 
 # pip3 install flask                --instala o Flask
 # pip3 install flask_restful        --instala a Api
