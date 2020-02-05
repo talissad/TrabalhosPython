@@ -5,7 +5,7 @@ from Aula50.model.AulaModel import Aula
 class AulaDao:
     def __init__(self):
         self.connection = MySQLdb.connect(host = '127.0.0.1', database = 'aulabd', user = 'root', passwd = '')
-        self.cursor = self.connection.cursor()
+        self.cursor = self.connection.cursor()          #pedir + informações
 
     # 5 metodos do CRUD
     def list_all(self):

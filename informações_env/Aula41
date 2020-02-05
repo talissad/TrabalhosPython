@@ -1,0 +1,21 @@
+######################      Comandos Virtualenv      ######################
+
+# deactivate
+# virtualenv --python="C:\Users\900161\AppData\Local\Programs\Python\Python37/python.exe" pasta/ENV
+# pasta/ENV/Scripts/Activate
+
+# where python                        --localiza o python
+
+# pip3 install flask                                    --instala o Flask
+# pip3 install flask_restful                            --instala a Api
+# pip3 install flask_mysqldb                            --instala o Mysql
+# pip3 install sqlalchemy                               --instala o SQLAlchemy (framework)
+# pip3 install mysql-connector-python                   --instala o conector do Mysql
+
+
+# Adiciona interpretador (no canto inferior) escolhe o local + Script/python.exe
+# Cria estrutura embaixo
+# Script Path = arquivo que quer estartar
+
+
+#pip freeze > requirements.txt

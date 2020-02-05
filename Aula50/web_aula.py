@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_restful import Api
+
 from Aula50.controller.AulaController import AulaController
 
 app = Flask(__name__)
