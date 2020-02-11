@@ -5,7 +5,6 @@
 # pasta/ENV/Scripts/Activate
 
 # where python                        --localiza o python
-
 # pip3 install flask                                    --instala o Flask
 # pip3 install flask_restful                            --instala a Api
 # pip3 install flask_mysqldb                            --instala o Mysql
