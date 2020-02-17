@@ -2,7 +2,7 @@
 
 # deactivate
 # virtualenv --python="C:\Users\900161\AppData\Local\Programs\Python\Python37/python.exe" pasta/ENV
-# pasta/ENV/Scripts/Activate
+# pasta\ENV\Scripts\Activate
 
 # where python                        --localiza o python
 # pip3 install flask                                    --instala o Flask
