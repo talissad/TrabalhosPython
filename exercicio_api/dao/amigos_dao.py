@@ -1,35 +1,32 @@
+import os
+
 class AmigosDao:
-    def ler_arquivo(self):
+    def __init__(self):
         self.lista_pessoas = []
         arquivo = open("C:/Users/900161/Documents/TrabalhosPython/exercicio_api/pessoas.txt", "r")
         for pessoas in arquivo:
             pessoas = pessoas.strip()
             self.lista_pessoas.append(pessoas)
-        return self.lista_pessoas
 
     def list_all(self):
-        for i in self.lista_pessoas:
-            print(i+'\n')
+        return self.lista_pessoas
 
     def get_by_id(self, id):
         for i in self.lista_pessoas:
-            for j in i:
-                if id in j:
-                    return print(i)
+            if int(i[0]) == int(id):
+                return i
 
     def insert(self):
+        texto = input("Digite uma frase para acrescentar ao arquivo:\n")
         arquivo = open("C:/Users/900161/Documents/TrabalhosPython/exercicio_api/pessoas.txt", "a")
-        while retorno == 'S':
-            retorno = input('Gostaria de adicionar alguém a lista? (S/N) ')
-            retorno.upper()
-            if retorno == 'S':
-                arquivo.write('\n'+input('Digite o nome da pessoa a ser adicionada: '))
-            arquivo.close()
+        arquivo.write(texto + '\n')
+        arquivo.close()
         return f"objeto(s) inserido(s) com sucesso!"
 
-    def delete(self, id):
-        arquivo = open("C:/Users/900161/Documents/TrabalhosPython/exercicio_api/pessoas.txt", "w")
-        for i in arquivo:
-            if i == id:
-                self.lista_pessoas.remove(id)
+    def remove(self, id):
+        lista_atualizada = []
+        for i in self.lista_pessoas:
+            if int(i[0]) == int(id):
+                os.remove(i)
+                    arquivo = open("C:/Users/900161/Documents/TrabalhosPython/exercicio_api/pessoas.txt", "w", lista_atualizada)
         return f"objeto deletado com sucesso!"
