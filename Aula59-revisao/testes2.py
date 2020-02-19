@@ -9,14 +9,14 @@ class Calc:
 
     def set_n1(self, valor):
         self.__n1 = valor
-        return valor
+        return self.__n1
 
     def get_n1(self):
         return self.__n1
 
     def set_n2(self, valor):
         self.__n2 = valor
-        return valor
+        return self.__n2
 
     def get_n2(self):
         return self.__n2
