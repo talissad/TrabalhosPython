@@ -15,7 +15,7 @@ def adicionar_arquivo():
 #         retorno = input('Gostaria de adicionar alguém a viagem? (S/N) ')
 #         if retorno == 's':
 #             arquivo.write('\n'+input('Digite o nome da pessoa a ser adicionada: '))
-#     arquivo.close()
+#     arquivo.close()0
 
 
 def ler_arquivo():
