@@ -26,11 +26,13 @@ motoristaAguardo = []
 
 print('-'*100)
 
+
 def primeiraViagem(motorista, motorista2):
     motoristaAguardo.append(motorista2)
     print(f'Fortwo está indo em direção ao terminal com o {motorista} e o {motorista2}')
     print(f'Fortwo chegou no terminal, desembarca o {motorista2}')
     print(f'Fortwo está voltando com o {motorista} \n')
+
 
 def adicionarPassageiro(motorista, passageiro):
     passageiros.append(passageiro)
@@ -38,6 +40,7 @@ def adicionarPassageiro(motorista, passageiro):
     print(f'Fortwo chegou no terminal, desembarca o {passageiro}')
     print(f"Pessoas que estão no terminal: {', '.join(passageiros)}")
     print(f'Fortwo está voltando com o {motorista} \n')
+
 
 def adicionarPassageiroMotorista(motorista, passageiro):
     passageiros.append(passageiro)

@@ -3,7 +3,6 @@ canibais = ['canibal', 'canibal', 'canibal']
 ladoMargem = []
 
 def deslocar (lista):
-    bool (paraAtravesar)
     while paraAtravesar:
         print(f"Passageiros para atravesar: {', '.join(paraAtravesar)}")
         motorista = input('Digite quem irá remar o barco: ')

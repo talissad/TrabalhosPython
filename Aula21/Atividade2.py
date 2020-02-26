@@ -32,11 +32,11 @@
 
 lista_numero = []
 posicao = 1
-quantidade = int(input('Digite a quantidade de números: '))
+quantidade = int(input('Digite a quantidade de números a ser somados: '))
 
 try:
     for i in range(quantidade):
-        numero = int(input(f'Digite a {posicao} número: '))
+        numero = int(input(f'Digite o {posicao}º número: '))
         lista_numero.append(numero)
         posicao += 1
 

@@ -38,7 +38,7 @@ def consulta(lista_consulta_funcao,numero):
         else:
             print('código não encontrado!')
 
-lista1 = ler_cadastro()
+ler_cadastro()
 lista_email(lista1)
 
 while True:

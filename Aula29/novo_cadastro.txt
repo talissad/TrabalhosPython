@@ -1,0 +1,1 @@
+['policial', 'presidiario', 'oficial 1', 'comissaria 1', 'comissaria 2', 'oficial 2', 'piloto', 'chefe']

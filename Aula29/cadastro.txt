@@ -5,5 +5,3 @@ presidiario
 oficial 1
 oficial 2
 comissaria 1
-comissaria 2
-Ricardo

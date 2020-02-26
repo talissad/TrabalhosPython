@@ -1,14 +1,19 @@
 passageiroTerminal = []
 passageiroAviao = []
 
-def adicionarPassageiro():
-    arquivo = open("Aula29/cadastro.txt", "a")
-    retorno = 's'
-    while retorno == 's':
-        retorno = input('Gostaria de adicionar alguém a viagem? (S/N) ')
-        if retorno == 's':
-            arquivo.write('\n'+input('Digite o nome da pessoa a ser adicionada: '))
+def adicionar_arquivo():
+    arquivo = open("Aula29/novo_cadastro.txt", "a")
+    arquivo.write(f'{passageiroAviao}')
     arquivo.close()
+
+# def adicionarPassageiro():
+#     arquivo = open("Aula29/cadastro.txt", "a")
+#     retorno = 's'
+#     while retorno == 's':
+#         retorno = input('Gostaria de adicionar alguém a viagem? (S/N) ')
+#         if retorno == 's':
+#             arquivo.write('\n'+input('Digite o nome da pessoa a ser adicionada: '))
+#     arquivo.close()
 
 def ler_arquivo():
     arquivo = open("Aula29/cadastro.txt", "r")
@@ -86,6 +91,6 @@ def deslocamentoAviao():
         else:
             print(f'O {motorista} não está esperando o deslocamento.')
 
-adicionarPassageiro()
 ler_arquivo()
 deslocamentoAviao()
+adicionar_arquivo()

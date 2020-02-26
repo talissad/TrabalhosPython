@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{titulo_app}} - Cadastrar</title>
+    <link rel="stylesheet" href="../static/estilo.css">
+</head>
+<body>
+    <div class="conteudo">
+        <form action="/salvar" method="get">
+            <input type="hidden" name="id" id="id" value="{{squads.id}}"> <br/>
+            <div class="descricoes"> 
+                
+                <label for="nome">Nome:</label>
+            </div>
+            <input type="text" name="nome" id="nome" placeholder="Digite o nome: " value="{{squads.nome}}"> <br/>
+            <div class="descricoes"> 
+                
+                
+                <label for="descricao">Descrição:</label>
+            </div>
+            <input type="text" name="descricao" id="descricao" value="{{squads.descricao}}"> <br/>
+            <div class="descricoes"> 
+
+                
+                <label for="numeroPessoas">Número de Integrantes: </label>
+            </div>
+            <input type="text" name="numeroPessoas" id="numeroPessoas" value="{{squads.numeroPessoas}}"> <br/>
+            <div class="descricoes"> 
+
+
+                <label for="linguagemBackend">Linguagem BackEnd:</label>
+            </div>
+            <input type="text" name="linguagemBackend" id="linguagemBackend" value="{{squads.linguagemBackend.nome}}"> <br/>
+            <div class="descricoes"> 
+
+
+                <label for="frameworkFrontend">Framework do FrontEnd:</label>
+            </div>
+            <input type="text" name="frameworkFrontend" id="frameworkFrontend" value="{{squads.frameworkFrontend.nome}}"> <br/>
+            <div class="descricoes"> 
+
+                <label for="sgbds">SGBDS:</label>
+            </div>
+            <input type="text" name="sgbds" id="sgbds" value="{{squads.sgbds.nome}}"> <br/>
+            <div class="descricoes"> 
+
+
+
+            <input type="hidden" name="id_front" id="id_front" value="{{squads.frameworkFrontend.id}}"> <br/>
+            <input type="hidden" name="id_backend" id="id_backend" value="{{squads.linguagemBackend.id}}"> <br/>
+            <input type="hidden" name="id_sgbds" id="id_sgbds" value="{{squads.sgbds.id}}"> <br/>
+
+            <hr/>
+            <input type="submit" value="Salvar" class="salvar">
+            <a href="/cadastrar" class="limpar">Limpar</a>
+        </form>
+    </div>
+</body>
+</html>
