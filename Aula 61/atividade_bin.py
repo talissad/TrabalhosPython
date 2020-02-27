@@ -23,22 +23,25 @@
 
 
 def ler_binario(binario):
-    n = bin(binario)
-    binario_convetido = n[2:]
+    n = bin(binario)[2:]
+    print(f'Convertido = {n}')
 
     anterior = ''
     lacuna = 0
-    for numero in binario_convetido:
-        int(numero)
+    for numero in n:
         if numero != anterior and anterior == '0':
             lacuna += 1
         anterior = numero
 
-    print(f'Convertido = {binario_convetido}')
-    print(f'Existe {lacuna} lacuna(s)\n')
+    contador = n.split('1')
+    if lacuna >= 1:
+        gap = len(max(contador))
+        print(f'Existe {lacuna} lacuna(s)')
+        print(f'O maior gap é de {gap} zeros\n')
+    else:
+        print('Não existe lacunas\n')
 
 
-ler_binario(529)
-ler_binario(15)
+ler_binario(1560)
+ler_binario(150)
 ler_binario(32)
-ler_binario(9)
